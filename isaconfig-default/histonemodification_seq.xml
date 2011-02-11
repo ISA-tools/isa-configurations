@@ -1,6 +1,6 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
-    <isatab-configuration table-name="envgen_survey_seq" isatab-assay-type="generic_assay" isatab-conversion-target="sra">
-        <measurement term-label="environmental gene survey" term-accession=""
+    <isatab-configuration table-name="histonemodification_seq" isatab-assay-type="generic_assay" isatab-conversion-target="sra">
+        <measurement term-label="histone modification profiling" term-accession=""
             source-abbreviation="OBI"/>
         <technology term-label="nucleotide sequencing" term-accession="" source-abbreviation="OBI"/>
         <field header="Sample Name" data-type="String" is-file-field="false"
@@ -10,6 +10,31 @@
             <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT]</generated-value-template>
         </field>
         <protocol-field protocol-type="nucleic acid extraction"/>
+        <field header="Parameter Value[cross linking]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false">
+            <description>a protocol parameter specific to chromatin immuprecipitation in this context</description>
+            <default-value/>
+            <list-values>uv-light,formaldehyde,di-tert-butyl peroxide,formaldehyde and di-tert-butyl peroxyde</list-values>
+        </field>
+        <field header="Parameter Value[DNA fragmentation]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false">
+            <description>a parameter value to report the method used for shearing DNA. Classic methods are sonication, nebulisation</description>
+            <default-value/>
+            <list-values>sonication,nebulization,micrococcal nuclease digestion,deoxyribonuclease digestion</list-values>
+        </field>
+        <field header="Parameter Value[DNA fragment size]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false">
+            <description>a parameter to report the intended DNA fragment size resulting from the DNA fragmentation process (aka DNA shearing)</description>
+            <default-value/>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false">
+            <description>unit to express nucleic acid size"</description>
+        </unit-field>
+        <field header="Parameter Value[immunoprecipitation antibody]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false">
+            <description>a parameter to report immunoprecipitation antibody details. Structure information as follows: antibody name;antibody manufacturer;antibody catalog number;antibody dilution factor;clonality</description>
+            <default-value/>
+        </field>
         <field header="Extract Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true">
             <description>User-defined names for each portion of extracted material.</description>
@@ -17,42 +42,20 @@
             <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT].Extract-[EXTRACT_COUNT]</generated-value-template>
         </field>
         <protocol-field protocol-type="library construction"/>
-        <field header="Parameter Value[taxonomic domain]" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="false">
-            <description>provide the taxonomic group targeted by this survey. for instance Archae, Bacteria, Eukaryota</description>
-            <default-value/>
-        </field>
-        <field header="Parameter Value[target gene]" data-type="List" is-file-field="false"
-            is-multiple-value="false" is-required="false">
-            <description>In Environmental Gene Survey Studies, report the gene of interest used to monitor diversity</description>
-            <default-value/>
-            <list-values>16S rRNA,18S rRNA,nif,amoA,rpo</list-values>
-        </field>
-        <field header="Parameter Value[target subfragment]" data-type="List" is-file-field="false"
-            is-multiple-value="false" is-required="false">
-            <description>In Environmental Gene Survey Studies, depends on declaring a target_gene, allows added specificity</description>
-            <default-value/>
-            <list-values>V6,V9,ITS</list-values>
-        </field>
-        <field header="Parameter Value[pcr primers]" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="false">
-            <description>In Environmental Gene Survey Studies, mandatory information, formatting according to miens specifications</description>
-            <default-value/>
-        </field>
         <field header="Parameter Value[library source]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false">
-            <description>The LIBRARY_SOURCE specifies the type of source material that is being sequenced. (SRA 1.2 documentation)</description>
-            <default-value>METAGENOMICS</default-value>
+            <description>The LIBRARY_SOURCE specifies the type of source material that is being sequenced. (SRA 1.2 documentation). By default set to Genomic in this context</description>
+            <default-value>GENOMIC</default-value>
         </field>
-        <field header="Parameter Value[library strategy]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[library strategy]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false">
             <description>Sequencing technique intended for this library (SRA 1.2 documentation)</description>
-            <default-value>AMPLICON</default-value>
+            <default-value/>
         </field>
-        <field header="Parameter Value[library selection]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[library selection]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false">
             <description>Whether any method was used to select for or against, enrich, or screen the material being sequenced. (SRA 1.2 documentation)</description>
-            <default-value>PCR</default-value>
+            <default-value/>
         </field>
         <field header="Parameter Value[library layout]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false">
@@ -65,7 +68,6 @@
             <description>'mid' stands for 'multiplex identifier' (aka barcode tag). Use this field when performing a multiplexing procedure and indicate here the nucleic acid tag used to uniquely identify the sample if the pool.</description>
             <default-value/>
         </field>
-        <!--<protocol-field protocol-type="library multiplexing"/>-->
         <!-- This ISA node is not needed in next-gen sequencing assay, removed from configuration to simplify layout and user experience
             Main rationale: Not required by SRA schema and overall not required by the technology
             <protocol-field protocol-type="labeling"/>
@@ -96,17 +98,16 @@
             <default-value/>
             </field>
         -->
-        <field header="Parameter Value[quality scorer]" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="false">
-            <description>Name and version of the quality scoring software.</description>
-            <default-value/>
-        </field>
         <field header="Parameter Value[base caller]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false">
             <description>Name and version of the base or color calling software.</description>
             <default-value/>
         </field>
-        <protocol-field protocol-type="sequence analysis data transformation"/>
+        <field header="Parameter Value[quality scorer]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false">
+            <description>Name and version of the quality scoring software.</description>
+            <default-value/>
+        </field>
         <field header="Assay Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true">
             <description>User-defined name for an assay.</description>
@@ -118,6 +119,7 @@
             <description>Name (or URI) of the raw data file generated by an assay.</description>
             <default-value/>
         </field>
+        <protocol-field protocol-type="sequence analysis data transformation"/>
         <field header="Normalization Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false">
             <description>User-defined name for each normalization applied</description>
@@ -130,7 +132,7 @@
         </field>
         <field header="Derived Data File" data-type="String" is-file-field="true"
             is-multiple-value="false" is-required="false">
-            <description>Name (or URI) of the data file generated by an assay</description>
+            <description>Name (or URI) of the data file generated by an assay.</description>
             <default-value/>
         </field>
         <structured-field name="Factors"/>
