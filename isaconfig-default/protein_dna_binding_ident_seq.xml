@@ -42,6 +42,7 @@
             <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT].Extract-[EXTRACT_COUNT]</generated-value-template>
         </field>
         <protocol-field protocol-type="library construction"/>
+        <!-- library source requirement no longer required with latest implementation of ISAconverter to SRA1.2
         <field header="Parameter Value[library source]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false">
             <description>The LIBRARY_SOURCE specifies the type of source material that is being sequenced. (SRA 1.2 documentation)</description>
@@ -57,6 +58,7 @@
             <description>Whether any method was used to select for or against, enrich, or screen the material being sequenced. (SRA 1.2 documentation)</description>
             <default-value>ChIP</default-value>
         </field>
+        -->
         <field header="Parameter Value[library layout]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false">
             <description>specifies whether to expect single, paired, or other configuration of reads.</description>

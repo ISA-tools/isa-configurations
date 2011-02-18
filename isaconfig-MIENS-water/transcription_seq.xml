@@ -20,6 +20,7 @@
             </generated-value-template>
         </field>
         <protocol-field protocol-type="library construction"/>
+        <!-- library source requirement no longer required with latest implementation of ISAconverter to SRA1.2
         <field header="Parameter Value[library source]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false">
             <description>The LIBRARY_SOURCE specifies the type of source material that is being sequenced. (SRA 1.2 documentation) (by default its value is set to Transcriptomic for this assay type</description>
@@ -36,6 +37,7 @@
             <default-value/>
             <list-values>RT-PCR,CAGE,RACE,cDNA,Hybrid Selection,other</list-values>
         </field>
+        -->
         <field header="Parameter Value[library layout]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="true">
             <description>specifies whether to expect single, paired, or other configuration of reads.</description>
