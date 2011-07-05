@@ -7,6 +7,7 @@
             <description>Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.</description>
             <default-value/>
         </field>
+        <protocol-field protocol-type="histology"/>       
         <field header="Assay Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true">
             <description>User-defined name for an assay.</description>

@@ -9,6 +9,7 @@
             <default-value/>
             <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT]</generated-value-template>
         </field>
+        <protocol-field protocol-type="hematology"/>       
         <field header="Assay Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true">
             <description>User-defined name for an assay.</description>
