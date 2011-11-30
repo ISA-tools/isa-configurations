@@ -1,6 +1,6 @@
 ##What are ISA configurations
 
-ISA Configurations consist of multiple XML files and are created in the ISAcreator configurator, the latest version is downloadable from the ISA GitHub site (https://github.com/ISA-tools/ISAconfigurator/downloads) or from the main ISA website (http://www.isa-tools.org/tools.html).
+ISA Configurations consist of multiple XML files and are created in the ISAcreator configurator, the latest version is downloadable from the ISA GitHub site (https://github.com/ISA-tools/ISAconfigurator/downloads) or from the main ISA website (http://www.isa-tools.org).
 
 The configurations are designed to meet the requirements of one or more checklist(s) ( [http://www.mibbi.org minimum information), specifying the required fields, and/or enabling values to be drawn from a set of ontology terms.
 
