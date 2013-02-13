@@ -1,7 +1,7 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
     <isatab-configuration table-name="protein_expression_ge">
         <measurement term-label="protein expression profiling" term-accession="obo:OBI_0000615" source-abbreviation="OBI" source-title="Ontology for Biomedical Investigations" source-version="47893" source-uri="http://bioportal.bioontology.org/ontologies/47893"/>
-        <technology term-label="gel electrophoresis" term-accession="" source-abbreviation="OBI" source-title="Ontology for Biomedical Investigations" source-version="47893" source-uri="http://bioportal.bioontology.org/ontologies/47893"/>
+        <technology term-label="gel electrophoresis" term-accession="obo:OBI_0600053" source-abbreviation="OBI" source-title="Ontology for Biomedical Investigations" source-version="47893" source-uri="http://bioportal.bioontology.org/ontologies/47893"/>
         <field header="Sample Name" data-type="String" is-file-field="false" is-multiple-value="true"
                is-required="true">
             <description>Samples represent major outputs resulting from a protocol application other than the special
