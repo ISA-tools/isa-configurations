@@ -38,7 +38,7 @@
             <default-value></default-value>
             <recommended-ontologies>
                 <ontology id="1007" abbreviation="CHEBI" name="Chemical entities of biological interest"
-                          version="40664"/>
+                          version="49736"/>
             </recommended-ontologies>
         </field>
         <protocol-field protocol-type="mass spectrometry"/>
@@ -47,7 +47,7 @@
             <description>the name of the mass spectrometry instrument</description>
             <default-value></default-value>
             <recommended-ontologies>
-                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="40763"/>
+                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
             </recommended-ontologies>
         </field>
         <field header="Parameter Value[ion source]" data-type="Ontology term" is-file-field="false"
@@ -55,7 +55,7 @@
             <description>the ion source used by the mass spectrometer, use PSI-MS cv</description>
             <default-value></default-value>
             <recommended-ontologies>
-                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="40763"/>
+                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
             </recommended-ontologies>
         </field>
         <field header="Parameter Value[detector]" data-type="Ontology term" is-file-field="false"
@@ -63,7 +63,7 @@
             <description>the detector used by the mass spectrometer, use PSI-MS cv</description>
             <default-value></default-value>
             <recommended-ontologies>
-                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="40763"/>
+                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
             </recommended-ontologies>
         </field>
         <field header="Parameter Value[analyzer]" data-type="Ontology term" is-file-field="false"
@@ -71,7 +71,7 @@
             <description>the analyzer(s) used by the mass spectrometer, use PSI-MS cv</description>
             <default-value></default-value>
             <recommended-ontologies>
-                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="40763"/>
+                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
             </recommended-ontologies>
         </field>
         <field header="MS Assay Name" data-type="String" is-file-field="false" is-multiple-value="false"

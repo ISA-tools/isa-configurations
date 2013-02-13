@@ -23,7 +23,7 @@
             <default-value></default-value>
             <recommended-ontologies>
                 <ontology id="1007" abbreviation="CHEBI" name="Chemical entities of biological interest"
-                          version="40664"/>
+                          version="49736"/>
             </recommended-ontologies>
         </field>
         <field header="Assay Name" data-type="String" is-file-field="false" is-multiple-value="false"
@@ -53,7 +53,7 @@
         <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false">
             <description>unit"</description>
             <recommended-ontologies>
-                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="40305"/>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49778"/>
             </recommended-ontologies>
         </unit-field>
         <field header="Image File" data-type="String" is-file-field="true" is-multiple-value="false"

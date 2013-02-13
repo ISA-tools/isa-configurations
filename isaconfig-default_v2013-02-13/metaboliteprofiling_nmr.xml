@@ -32,7 +32,7 @@
             <default-value/>
             <recommended-ontologies>
                 <ontology id="1007" abbreviation="CHEBI"
-                    name="Chemical entities of biological interest" version="40664"/>
+                    name="Chemical entities of biological interest" version="49736"/>
             </recommended-ontologies>
         </field>
         <protocol-field protocol-type="NMR spectroscopy"/>
