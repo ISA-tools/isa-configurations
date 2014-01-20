@@ -30,7 +30,7 @@
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Data Transformation Name" data-type="String" is-file-field="false"
-            is-multiple-value="true" is-required="false" is-hidden="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[This column contains a user-defined name for each transformation applied to the data]]></description>
             <default-value><![CDATA[]]></default-value>
