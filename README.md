@@ -6,7 +6,7 @@ The configurations are designed to meet the requirements of one or more checklis
 
 ##Download configurations
 
-All available configurations produced by the ISA tools team and collaborators (http://isatab.sourceforge.net/people_funding.html) can be viewed vin a table at the dedicated ISA-tools Configuration File page (https://github.com/ISA-tools/Configuration-Files/wiki/ISA-tools-Configuration-Files)
+All available configurations produced by the ISA tools team and collaborators (ISA commons, http://isacommons.org/) can be viewed vin a table at the dedicated ISA-tools Configuration File page (https://github.com/ISA-tools/Configuration-Files/wiki/ISA-tools-Configuration-Files)
 
 ##ISA configuration XSD
 
