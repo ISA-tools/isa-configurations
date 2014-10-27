@@ -32,7 +32,7 @@
             <description><![CDATA[(left blank)]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Comment[Created with configuration]" data-type="String"
+        <field header="Comment[Created With Configuration]" data-type="String"
             is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="true"
             is-forced-ontology="false" section="INVESTIGATION">
             <description><![CDATA[A field indicating which ISA configuration was used to create the ISAtab file.]]></description>
