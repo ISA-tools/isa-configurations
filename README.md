@@ -14,7 +14,8 @@ Some configurations are also available at:
 
 ##ISA configuration XSD
 
-An ISA configuration is comprised of a set of XML files following a schema available here https://github.com/ISA-tools/ISAcreator/blob/master/trunk/src/main/resources/xsd/isatab_configuration.xsd.
+An ISA configuration is comprised of a set of XML files following a schema available here https://github.com/ISA-tools/ISAvalidator-ISAconverter-BIImanager/blob/master/import_layer/src/main/resources/xsd/isatab_configurator.xsd
+
 
 ##Get help
 Contact the ISA team ([http://www.isa-tools.org/contact.html) if you need a new configuration that fit your specific needs, e.g. a different fields, or checklist, or set of ontologies/controlled vocabularies.
