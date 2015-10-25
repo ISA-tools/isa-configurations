@@ -7,14 +7,15 @@ The configurations are designed to meet the requirements of one or more checklis
 ##Download configurations
 
 All available configurations produced by the ISA tools team and collaborators (ISA commons, http://isacommons.org/) can be viewed via a table at the dedicated ISA-tools Configuration File page
-(http://isa-tools.org/configurations.html)
+(http://www.isa-tools.org/format/configurations/)
 
 Some configurations are also available at:
 (https://github.com/ISA-tools/Configuration-Files/wiki/ISA-tools-Configuration-Files)
 
 ##ISA configuration XSD
 
-An ISA configuration is comprised of a set of XML files following a schema available here https://github.com/ISA-tools/ISAcreator/blob/master/trunk/src/main/resources/xsd/isatab_configuration.xsd.
+An ISA configuration is comprised of a set of XML files following a schema available here https://github.com/ISA-tools/ISAvalidator-ISAconverter-BIImanager/blob/master/import_layer/src/main/resources/xsd/isatab_configurator.xsd
+
 
 ##Get help
 Contact the ISA team ([http://www.isa-tools.org/contact.html) if you need a new configuration that fit your specific needs, e.g. a different fields, or checklist, or set of ontologies/controlled vocabularies.
