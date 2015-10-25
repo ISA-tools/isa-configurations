@@ -1,0 +1,289 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="studySample">
+        <measurement term-label="[Sample]" term-accession="" source-abbreviation=""/>
+        <technology term-label="" term-accession="" source-abbreviation=""/>
+        <field header="Source Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Sources are considered as the starting biological material used in a study.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Material Type" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate if the material is a study subject or a calibration material]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>specimen,negative control reference (blank),positive control reference
+                (standard)</list-values>
+        </field>
+        <field header="Characteristics[reference descriptor]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[use this field to provide any additional information about the reference material used as negative or positive control and which is not a study subject]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>        
+        <field header="Characteristics[organism]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Provide a taxonomic information associated to the Source Biological material (for example, Species, genus, strain,....). Ideally, provide NCBI TaxID or NEWT identifier (Mapping to Metabolomics WB:Subjects:Subject Species)]]></description>
+            <default-value/>
+        </field>
+        <field header="Characteristics[cultivar]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[specify the cultivated variety or strain of the plant under study (Mapping to Metabolomics WB:Subjects:Genotype/Strain)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Characteristics[genotype]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[specify genotype of plant under study, for instance to report any man made genetic modification or natural variation (Mapping to Metabolomics WB:Subjects:Genotype/Strain)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Characteristics[life cycle stage]" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the stage of plant]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1587" abbreviation="PO" name="Plant Ontology" version="49609">
+                    <branch id="PO:0009012" name="plant structure development stage"/>
+                </ontology>
+                <ontology id="1037" abbreviation="TO" name="Plant Trai" version="49829">
+                    <branch id="TO:0000392" name="sterility or fertility trait"/>
+                </ontology>
+                <ontology id="1047" abbreviation="GRO_CPD" name="Cereal Plant Development"
+                    version="13404">
+                    <branch id="GRO:0007199" name="cereal plant growth stage ontology"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[gender]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the sex of the plant if applicable (Mapping to Metabolomics WB:Subjects:Gender)]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1107" abbreviation="PATO" name="Phenotypic quality" version="50065">
+                    <branch id="PATO:0001894" name="phenotypic sex"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[disease]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[report in this field the pathology observed in the plant.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <protocol-field protocol-type="specimen collection"/>
+        <field header="Parameter Value[planting date]" data-type="Date" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the date when the seed was sawn or the plant set in soil or feeding device (Mapping to Metabolomics WB:Treatments:PLANT:Date of Plant Establishment)]]></description>
+            <default-value><![CDATA[dd-MM-yyyy]]></default-value>
+        </field>
+        <field header="Parameter Value[growth support]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[nature of source of nutrient (Mapping to Metabolomics WB:Treatments:PLANT:Growth Support)]]></description>
+            <default-value><![CDATA[dd-MM-yyyy]]></default-value>
+            <list-values>soil,agar,vermiculite,hydroponic feed,culture medium</list-values>
+        </field>
+        <field header="Parameter Value[growth location]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate location of plants (Mapping to Metabolomics WB:Treatments:PLANT:Growth Location)]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>field,climate chamber,greenhouse,incubator</list-values>
+        </field>
+        <field header="Parameter Value[water regimen]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate amount and frequency of irrigation (Amount and time of watering per day) (Mapping to Metabolomics WB:Treatments:PLANT:Watering Regime)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indicate frequency unit"</description>
+            <recommended-ontologies>
+                <ontology id="1107" abbreviation="PATO" name="Phenotypic quality" version="50065">
+                    <branch id="PATO:0001894" name="phenotypic sex"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[light regimen]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate light cycle timing (Mapping to Metabolomics WB:Treatments:PLANT:Light Period)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indicate frequency unit"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000157" name="light unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[feed regimen]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate nature, quantity and frequency of plant feeding (Amount and time of additional nutrients given to plants) (Mapping to Metabolomics WB:Treatments:PLANT:Nutritional Regime)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[CO2 partial pressure]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate CO2 concentration in the atmosphere used to grow the plant]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[hygrometry]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate water content in the atmosphere used to grow the plant (Mapping to Metabolomics WB:Treatments:PLANT:Humidity)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indicate hygrometry unit"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000187" name="percent"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[temperature]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate temperature (Mapping to Metabolomics WB:Treatments:PLANT:Temperature)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indicate temperature unit"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000005" name="temperature unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[harvesting date]" data-type="Date" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the date on which the plants were harvesting or cut for collection (Mapping to Metabolomics WB:Treatments:PLANT:Harvest Date)]]></description>
+            <default-value><![CDATA[dd-MM-yyyy]]></default-value>
+        </field>
+        <field header="Parameter Value[metabolism quenching]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the method used to kill off metabolic reactions (Mapping to Metabolomics WB:Treatments:PLANT:Metabolism Quenching Method)]]></description>
+            <default-value><![CDATA[dd-MM-yyyy]]></default-value>
+            <list-values>SampleVal1,SampleVal2,SampleVal3</list-values>
+        </field>
+        <field header="Parameter Value[storage]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the storage procedure used for preserving specimens following collection, metabolism quenching until extraction for analysis (Mapping to Metabolomics WB:Treatments:PLANT:Storage)]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Sample Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT]</generated-value-template>
+        </field>
+        <field header="Characteristics[tissue specimen]" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the nature of anatomical structure or organ collected as a specimen (Mapping to Metabolomics WB:Collection:Sample Type)]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1108" abbreviation="PO_PAE" name="Plant Anatomy" version="47886">
+                    <branch id="PO:0025131" name="plant anatomical entity"/>
+                </ontology>
+                <ontology id="1001" abbreviation="GRO_CPGA" name="Cereal plant gross anatomy"
+                    version="47860">
+                    <branch id="PO:0025131" name="plant anatomical entity"/>
+                </ontology>
+                <ontology id="1038" abbreviation="PO_PSDS" name="Plant Structure Development Stage"
+                    version="47887">
+                    <branch id="PO:0009012" name="plant structure development stage"/>
+                </ontology>
+                <ontology id="1047" abbreviation="GRO_CPD" name="Cereal Plant Development"
+                    version="13404">
+                    <branch id="GRO:0007199" name="cereal plant growth stage ontology"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[cell]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[specify the cell type targeted by isolation method (Mapping to Metabolomics WB:Collection:TISSUE/CELL Identification)]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="http://data.bioontology.org/ontologies/CL" abbreviation="CL"
+                    name="Cell Ontology" version="46"/>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[cellular component]" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[specify the subcellular component targeted by isolation method (Mapping to Metabolomics WB:Collection:TISSUE/CELL Identification)]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1070" abbreviation="GO" name="Gene Ontology" version="50101">
+                    <branch id="GO:0005575" name="cellular_component"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <structured-field name="characteristics"/>
+        <structured-field name="factors"/>
+        <field header="Factor Value[Treatment]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the nature of the treatment applied to the plant (Mapping to Metabolomics WB:Treatments:Treatment (Abiotic, Biotic, Intervention))]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Factor Value[compound]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the chemical compound used as perturbing agent (using CHEBI) (Mapping to Metabolomics WB:Treatment Compound)]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1007" abbreviation="CHEBI"
+                    name="Chemical entities of biological interest" version="50031">
+                    <branch id="CHEBI:23367" name="molecular entity"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Factor Value[dose]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the qualitative dose for the perturbagen (Mapping to Metabolomics WB:Treatment Dose)]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>no dose,low dose,medium dose,high dose,NOAEL dose,lethal dose</list-values>
+        </field>
+        <field header="Factor Value[time post exposure]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the time indicating the duration of the exposure or the time elapsed post exposure in the case of a single dose administration study (Mapping to Metabolomics WB:Treatment Duration)]]></description>
+            <default-value><![CDATA[cell growth]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indication time unit associated with exposure time"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>       
+    </isatab-configuration>
+</isatab-config-file>
