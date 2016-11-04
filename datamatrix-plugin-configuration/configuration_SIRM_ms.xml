@@ -1,0 +1,109 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="stable_isotope_resolved_metabomics_ms_mid_tab">
+        <measurement term-label="isotopomer distribution matrix" term-accession="" source-abbreviation=""/>
+        <technology term-label="" term-accession="" source-abbreviation=""/>
+        <!-- OPTIONAL REPORTING OF TRACER MOLECULE INFORMATION
+           <field header="tracer_molecule" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false">
+            <description> The IUPAC name of the tracer molecule. e.g. "Uniformly Labeled 13C-Glucose" or
+                "15N Glutamine". </description>
+            <default-value/>
+        </field>       
+        <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
+            <description>
+                If available, the identifier minted by CHEBI for the small molecule -  metabolite. e.g. "CHEBI:12345".
+            </description>
+            <default-value></default-value>
+        </field> 
+       -->
+        <field header="sample ID" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+            <description>
+                a reference or identifier to a sample generated over the course of the study for which the measurements apply
+            </description>
+            <default-value></default-value>
+        </field>        
+        <field header="retention_time" data-type="String" is-file-field="false" is-multiple-value="false" is-required="flase" is-hidden="false">
+            <description>
+                The retention_time (MS:1000894), in the context of application using gas or liquid chromatography as separation methods, field is used to report the time elapsed between in sample injection and the moment it shows up in the detector post elution. It is a characteristic of the material of a given chemical class, dependent on chromatography column characteristics and mobile phase. The retention time is usually expressed in Minutes.
+            </description>
+            <default-value>not available</default-value>
+        </field>
+        <unit-field data-type="List" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value>min</default-value>
+            <description><![CDATA[a unit field to qualify the retention time.]]></description>
+        </unit-field>        
+        <field header="m/z" data-type="String" is-file-field="false" is-multiple-value="false" is-required="flase" is-hidden="false">
+            <description>
+                Three-character symbol m/z (MS:1000040) is used to denote the quantity formed by dividing the mass of an ion in unified atomic mass units by its charge number (regardless of sign). The symbol is written in italicized lower case letters with no spaces. Note 1: The term mass-to-charge-ratio is deprecated. Mass-to-charge ratio has been used for the abscissa of a mass spectrum, although the quantity measured is not the quotient of the ion's mass to its electric charge.
+            </description>
+            <default-value>not available</default-value>
+        </field>
+        <field header="post-collision m/z" data-type="String" is-file-field="false" is-multiple-value="false" is-required="flase" is-hidden="false">
+            <description>
+               a type of m/z signal intensity measured in the context of gas chromatography mass spectrometry (GC-MS)
+            </description>
+            <default-value>not available</default-value>
+        </field>
+        <field header="selected ion m/z" data-type="String" is-file-field="false" is-multiple-value="false" is-required="flase" is-hidden="false">
+            <description>
+                a type of m/z signal intensity about an ion. MS_1000744 is the identifier for the term in the Mass spectrometry Ontology.
+            </description>
+            <default-value>not available</default-value>
+        </field>
+        <field header="cluster identifier" data-type="String" is-file-field="false" is-multiple-value="false" is-required="flase" is-hidden="false">
+            <description>
+                a cluster identifier is an information assigned to uniquely identify a subset of mass spectrometry spectral peaks. MS_1002407 is the identifier for the term in the Mass spectrometry Ontology.
+            </description>
+            <default-value>not available</default-value>
+        </field>
+        <field header="empirical formula (of the monitored cluster)" data-type="String" is-file-field="false" is-multiple-value="false" is-required="flase" is-hidden="false">
+            <description>
+                The empirical formula of a compound is a chemical compound formula formed by juxtaposition of the atomic symbols with appropriate (integer) subscripts to give the simplest possible formula expressing the composition. MS_1000865 is the identifier for the term in the Mass spectrometry Ontology.
+                (from: http://www.chem.uky.edu/courses/che610/JPS_Spring_2007/Formulas.pdf)
+            </description>
+            <default-value>not available</default-value>
+        </field>               
+        <field header="molecular_fragment" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>A fragment name conventionally named using Cx-Cy where x and y correspond to the carbon number in the metabolite that is being analyzed. x can be 1 or higher and y is lower or equal to n, where n is the total number of carbons of the molecule backbone. For example: glucose has 6 carbons so the complete molecule fragment would be C1-C6. If the indicated fragment is C3-C6 it means that results will refer to the 4 carbons fragment between carbon 3 and carbon 6 of glucose molecule.
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="isotopologue_distribution" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                To indicate the percentage of fragment molecules that contain 0 13C (m+0), 1 13C (m+1), 2 13C (m+2), ... (y-x+1) 13C (m+y-x+1)). Values can be expressed as a fraction of unity or as percentage. This is usually the data that is most frequently reported in publications. Ideally these values should have been corrected for natural enrichment so that they only take into account the enrichment that comes from the tracer. NOTE: we use 'isotopologue' as synonymous to 'mass isotopomer'
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="isotopologue_shorthand" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                A short name denoted the isotopologue being monitoring. The name should follow to naming convention described in section 2 and contain the pattern to identify isotopes and their respective number of substitution. Adducts should also be described using established convention (see Fiehn et al, 1999) for electrospray and mild ionization mass spectrometry techniques.
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="metabolite name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+            <description>
+                the common name of the compound eluted at the given retention time, if known.
+            </description>
+            <default-value></default-value>
+        </field>       
+        <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
+            <description>
+                If available, the identifier minted by CHEBI for the small molecule -  metabolite. e.g. "CHEBI:12345".
+            </description>
+            <default-value></default-value>
+        </field>                 
+        
+        <field header="isotopologue_relative_concentration" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                The numerical value indicating the relative amount of a given isotopologue (reporting as a percentage). The synonym is "percentage isotopologue enrichment"
+            </description>
+            <default-value></default-value>
+        </field>         
+        <unit-field data-type="List" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value>%</default-value>
+            <description><![CDATA[a unit field to qualify 'isotopologue relative concentration" a.k.a "percentage isotopologue enrichment".]]></description>
+        </unit-field>                
+    </isatab-configuration>
+</isatab-config-file>

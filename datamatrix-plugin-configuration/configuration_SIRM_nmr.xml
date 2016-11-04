@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="stable_isotope_resolved_metabomics_nmr_mid_tab">
+        <measurement term-label="mass isotopomer distribution" term-accession="" source-abbreviation=""/>
+        <technology term-label="nmr spectroscopy" term-accession="" source-abbreviation=""/>
+
+  <!-- FIELDS REQUIRED BY METABOLOMICS PLUGIN -->
+        <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
+            <description>
+                The possible identifier for these small molecules. e.g. "KEGG:C000017" or "CHEBI:12345".
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="chemical_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true">
+            <description>NMR/MS: The chemical formula of the identified compound</description>
+            <default-value></default-value>
+        </field>
+        <field header="smiles" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+            <description>NMR/MS: The molecules structure in the simplified molecular-input line-entry system (SMILES)</description>
+            <default-value></default-value>
+        </field>
+        <field header="inchi" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+            <description>NMR/MS:  IUPAC International Chemical Identifier. It is uniquely representing a chemical substance and serving as its unique digital signature</description>
+            <default-value></default-value>
+        </field>
+        <field header="metabolite_identification" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true">
+            <description>NMR/MS: The small molecule's description/name.  Multiple values separated with | </description>
+            <default-value></default-value>
+        </field>       
+  <!-- END OF REQUIREMENTS -->
+        
+       <!-- OPTIONAL REPORTING OF TRACER MOLECULE INFORMATION
+           <field header="tracer_molecule" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false">
+            <description> The IUPAC name of the tracer molecule. e.g. "Uniformly Labeled 13C-Glucose" or
+                "15N Glutamine". </description>
+            <default-value/>
+        </field>       
+        <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
+            <description>
+                If available, the identifier minted by CHEBI for the small molecule -  metabolite. e.g. "CHEBI:12345".
+            </description>
+            <default-value></default-value>
+        </field> 
+       -->        
+        <field header="sample ID" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+            <description>
+                a reference or identifier to a sample generated over the course of the study for which the measurements apply
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="chemical shift first dimension" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+            <description>a numeric value to report on the chemical shift recorded by the instrument in the first dimension.
+            </description>
+            <default-value></default-value>
+        </field> 
+        <field header="unit" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+            <description>a controlled term to report the unit used to qualify the chemical shift.
+            </description>
+            <default-value>ppm</default-value>
+        </field> 
+        <field header="chemical shift second dimension" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+            <description>a numeric value to report on the chemical shift recorded by the instrument in the second dimension.
+            </description>
+            <default-value></default-value>
+        </field> 
+        <field header="unit" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+            <description>a controlled term to report the unit used to qualify the chemical shift.
+            </description>
+            <default-value>ppm</default-value>
+        </field> 
+        <field header="multiplicity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
+            <description>NMR: Type of multiplets observed of the metabolite (e.g s, d, t, q, dd, ...)</description>
+            <default-value></default-value>
+        </field>  
+        <field header="labeled atomic position in molecule" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                atomic position (here we are considering proton), use IUPAC convention. Indicated as vector where 1 represents isotopic substitution and 0 means normal atom. Example would  [1,0,0,1] for a molecule containing 4 atoms in its backbone where 2 substitutions occured.
+            </description>
+            <default-value></default-value>
+        </field>
+
+        <field header="deconvoluted peak area" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+               a numeric value indicating the area of the NMR spectrum peak following a deconvolution procedure. No unit field is needed as the values are usually in arbitrary values.
+            </description>
+            <default-value></default-value>
+        </field> 
+        <field header="area corrected for number of proton" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                area corrected for number of proton (for saturation factor), also known as 'number of proton correction peak area'
+            </description>
+            <default-value></default-value>
+        </field>         
+        <field header="peak deconvolution method" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                a short description or abbreviation describing the method used to deconvolute peaks in the NMR spectrum (for instance <TODO>add method here</TODO>)
+            </description>
+            <default-value></default-value>
+        </field>  
+        <field header="basis of assignment" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
+            <description>a short description, possibly using a controled vocabulary such as evidence code ontology</description>
+            <default-value></default-value>
+            <listvalues>,chemical shift,mulitplicity,2D cross peak,proton-proton,homonuclear,heteronuclear resonance,not applicable,not available,other</listvalues>
+        </field> 
+        <field header="metabolite name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+            <description>
+                the common name of the compound eluted at the given retention time, if known.
+            </description>
+            <default-value></default-value>
+        </field>       
+        <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
+            <description>
+                If available, the identifier minted by CHEBI for the small molecule -  metabolite. e.g. "CHEBI:12345".
+            </description>
+            <default-value></default-value>
+        </field>           
+    </isatab-configuration>
+</isatab-config-file>

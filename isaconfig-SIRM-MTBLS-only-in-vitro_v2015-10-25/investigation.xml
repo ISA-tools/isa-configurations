@@ -288,7 +288,7 @@
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false" section="STUDY DESIGN DESCRIPTORS">
             <description><![CDATA[The type of study design being employed, e.g. intervention design, cross-over design, factorial design etc.]]></description>
-            <default-value><![CDATA[]]></default-value>
+            <default-value><![CDATA[stable isotope resolved metabolomics]]></default-value>
         </field>
         <field header="Study Assay Measurement Type" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
