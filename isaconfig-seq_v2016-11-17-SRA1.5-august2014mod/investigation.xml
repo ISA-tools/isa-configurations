@@ -1,4 +1,15 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <!--  
+    author: Philippe Rocca-Serra (philippe.rocca-serra@oerc.ox.ac.uk)
+    organisation: University of Oxford e-Research Centre
+    based on: EBI hosted SRA XSD document available from https://www.ebi.ac.uk/ena/submit/read-xml-format-1-5
+    last access date: 2016/11/17
+    license: CC-BY-SA-4.0
+    project: BBSRC UK COPO
+    funding agency: BBSRC UK
+    grant number: 
+    -->
+    
     <isatab-configuration table-name="investigation">
         <measurement term-label="[investigation]" term-accession="" source-abbreviation=""/>
         <technology term-label="" term-accession="" source-abbreviation=""/>

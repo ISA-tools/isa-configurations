@@ -1,12 +1,23 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
-    <isatab-configuration table-name="chromatin_modification_seq" isatab-assay-type="generic_assay"
-        isatab-conversion-target="sra">
-        <measurement term-label="chromatin modification profiling" term-accession=""
+    <!--  
+    author: Philippe Rocca-Serra (philippe.rocca-serra@oerc.ox.ac.uk)
+    organisation: University of Oxford e-Research Centre
+    based on: EBI hosted SRA XSD document available from https://www.ebi.ac.uk/ena/submit/read-xml-format-1-5
+    last access date: 2016/11/17
+    license: CC-BY-SA-4.0
+    project: BBSRC UK COPO
+    funding agency: BBSRC UK
+    grant number: 
+    -->
+    <isatab-configuration table-name="protein_rna_binding_ident_seq"
+        isatab-assay-type="generic_assay" isatab-conversion-target="sra">
+        <measurement term-label="protein-RNA binding site identification" term-accession=""
             source-abbreviation=""/>
         <technology term-label="nucleotide sequencing"
             term-accession="http://purl.obolibrary.org/obo/OBI_0000626" source-abbreviation="OBI"/>
         <field header="Sample Name" data-type="String" is-file-field="false"
-            is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
             <description><![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]></description>
             <default-value><![CDATA[]]></default-value>
             <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT]</generated-value-template>
@@ -19,14 +30,14 @@
             <default-value><![CDATA[]]></default-value>
             <list-values>uv-light,formaldehyde,di-tert-butyl peroxide,formaldehyde and di-tert-butyl peroxyde</list-values>
         </field>
-        <field header="Parameter Value[DNA fragmentation]" data-type="List" is-file-field="false"
+        <field header="Parameter Value[RNA fragmentation]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[a parameter value to report the method used for shearing DNA. Classic methods are sonication, nebulisation]]></description>
             <default-value><![CDATA[]]></default-value>
             <list-values>sonication,nebulization,micrococcal nuclease digestion,deoxyribonuclease digestion</list-values>
         </field>
-        <field header="Parameter Value[DNA fragment size]" data-type="Double" is-file-field="false"
+        <field header="Parameter Value[RNA fragment size]" data-type="Double" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[a parameter to report the intended DNA fragment size resulting from the DNA fragmentation process (aka DNA shearing)]]></description>
@@ -55,26 +66,26 @@
             is-forced-ontology="false">
             <description><![CDATA[Sequencing technique intended for this library (SRA 1.5 documentation)]]></description>
             <default-value><![CDATA[]]></default-value>
-            <list-values>GENOMIC,GENOMIC SINGLE CELL,METAGENOMIC,OTHER</list-values>
-        </field>        
+            <list-values>TRANSCRIPTOMIC,TRANSCRIPTOMIC SINGLE CELL,METATRANSCRIPTOMIC,OTHER</list-values>
+        </field>   
         <field header="Parameter Value[library strategy]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Sequencing technique intended for this library (SRA 1.5 documentation)]]></description>
             <default-value><![CDATA[]]></default-value>
-            <list-values>Hi-C,ATAC-seq,ChIP-Seq,Targeted Capture,Tethered Chromatin Conformation Capture,OTHER</list-values>
+            <list-values>RIP-Seq,OTHER</list-values>
         </field>
         <field header="Parameter Value[library selection]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Whether any method was used to select for or against, enrich, or screen the material being sequenced. (SRA 1.5 documentation)]]></description>
             <default-value><![CDATA[]]></default-value>
-            <list-values>PCR,RANDOM-PCR,ChIP,Hybrid Selection,Reduced Representation,padlock probes capture method,other,unspecified</list-values>
+            <list-values>PCR,RANDOM-PCR,ChIP,other,unspecified</list-values>
         </field>        
         <field header="Parameter Value[library layout]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[specifies whether to expect single, paired, or other configuration of reads.(SRA 1.5 documentation)]]></description>
+            <description><![CDATA[specifies whether to expect single, paired, or other configuration of reads.]]></description>
             <default-value><![CDATA[]]></default-value>
             <list-values>SINGLE,PAIRED</list-values>
         </field>
@@ -90,18 +101,18 @@
             is-forced-ontology="false">
             <description><![CDATA[a parameter to report the sequencing instrument model and make]]></description>
             <default-value><![CDATA[]]></default-value>
-            <list-values>454 GS,454 GS 20,454 GS FLX,454 GS FLX+,454 GS FLX Titanium,454 GS Junior,AB SOLiD System,AB SOLiD System 2.0,AB SOLiD System 3.0,AB SOLiD 3 Plus System,AB SOLiD 4 System,AB SOLiD 4hq System,AB SOLiD PI System,AB SOLiD 5500,AB SOLiD 5500xl,AB 5500 Genetic Analyzer,AB 5500xl Genetic analyzer,AB 5500xl-W Genetic Analysis System,Illumina Genome Analyzer,Illumina Genome Analyzer II,Illumina Genome Analyzer IIx,Illumina HiSeq 1000,Illumina HiSeq 1500,Illumina HiSeq 2000,Illumina HiSeq 2500,Illumina HiSeq 3000,Illumina HiSeq 4000,Illumina HiScanSQ,Illumina MiSeq,HiSeq X Five,HiSeq X Ten,NextSeq 500,NextSeq 550,Ion Torrent PGM,Ion Torrent Proton,MinION,GridION,PacBio RS,PacBio RS II,Helicos HeliScope,Complete Genomics,Sanger sequencing instrument,AB 3730xL Genetic Analyzer,AB 3730 Genetic Analyzer,AB 3500xL Genetic Analyzer,AB 3500 Genetic Analyzer,AB 3130xL Genetic Analyzer,AB 3130 Genetic Analyzer,AB 310 Genetic Analyzer,unspecified</list-values>
+            <list-values>454 GS,454 GS 20,454 GS FLX,454 GS FLX+,454 GS FLX Titanium,454 GS Junior,AB SOLiD System,AB SOLiD System 2.0,AB SOLiD System 3.0,AB SOLiD 3 Plus System,AB SOLiD 4 System,AB SOLiD 4hq System,AB SOLiD PI System,AB SOLiD 5500,AB SOLiD 5500xl,AB 5500 Genetic Analyzer,AB 5500xl Genetic analyzer,AB 5500xl-W Genetic Analysis System,Illumina Genome Analyzer,Illumina Genome Analyzer II,Illumina Genome Analyzer IIx,Illumina HiSeq 1000,Illumina HiSeq 1500,Illumina HiSeq 2000,Illumina HiSeq 2500,Illumina HiSeq 3000,Illumina HiSeq 4000,Illumina HiScanSQ,Illumina MiSeq,HiSeq X Five,HiSeq X Ten,NextSeq 500,NextSeq 550,Ion Torrent PGM,Ion Torrent Proton,MinION,GridION,PacBio RS,PacBio RS II,Sequel,BGISEQ-500,Helicos HeliScope,Complete Genomics,Sanger sequencing instrument,AB 3730xL Genetic Analyzer,AB 3730 Genetic Analyzer,AB 3500xL Genetic Analyzer,AB 3500 Genetic Analyzer,AB 3130xL Genetic Analyzer,AB 3130 Genetic Analyzer,AB 310 Genetic Analyzer,unspecified</list-values>
+        </field>
+        <field header="Parameter Value[quality score]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Name and version of the quality scoring software.]]></description>
+            <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Parameter Value[base caller]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Name and version of the base or color calling software.]]></description>
-            <default-value><![CDATA[]]></default-value>
-        </field>
-        <field header="Parameter Value[quality scorer]" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="false" is-hidden="false"
-            is-forced-ontology="false">
-            <description><![CDATA[Name and version of the quality scoring software.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <field header="Assay Name" data-type="String" is-file-field="false"
@@ -125,14 +136,8 @@
             <default-value><![CDATA[]]></default-value>
         </field>
         <protocol-field protocol-type="sequence analysis data transformation"/>
-        <field header="Normalization Name" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="false" is-hidden="false"
-            is-forced-ontology="false">
-            <description><![CDATA[User-defined name for each normalization applied]]></description>
-            <default-value><![CDATA[]]></default-value>
-        </field>
         <field header="Data Transformation Name" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-multiple-value="true" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[User-defined name for each data transformation applied]]></description>
             <default-value><![CDATA[]]></default-value>
@@ -140,7 +145,7 @@
         <field header="Derived Data File" data-type="String" is-file-field="true"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[Name (or URI) of the data file generated by an assay.]]></description>
+            <description><![CDATA[Name (or URI) of the data file generated by an assay]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <structured-field name="factors"/>

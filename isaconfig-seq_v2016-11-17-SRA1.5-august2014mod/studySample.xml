@@ -1,4 +1,14 @@
 <isatab-config-file xmlns="http://www .ebi.ac.uk/bii/isatab_configuration#">
+    <!--  
+    author: Philippe Rocca-Serra (philippe.rocca-serra@oerc.ox.ac.uk)
+    organisation: University of Oxford e-Research Centre
+    based on: EBI hosted SRA XSD document available from https://www.ebi.ac.uk/ena/submit/read-xml-format-1-5
+    last access date: 2016/11/17
+    license: CC-BY-SA-4.0
+    project: BBSRC UK COPO
+    funding agency: BBSRC UK
+    grant number: 
+    -->
     <isatab-configuration table-name="studySample">
         <measurement term-label="[Sample]" term-accession="" source-abbreviation=""/>
         <technology term-label="" term-accession="" source-abbreviation=""/>
@@ -12,11 +22,14 @@
         <field header="Characteristics[organism]" data-type="Ontology term" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[Provide a taxonomic information associated to the Source Biological material (for example, Species, genus, strain,....). Ideally, provide NCBI TaxID or NEWT identifier]]></description>
+            <description><![CDATA[Provide a taxonomic information associated to the Source Biological material (for example, Species, genus, strain,....). Ideally, provide NCBI TaxID]]></description>
             <default-value/>
             <recommended-ontologies>
-                <ontology id="" abbreviation="NEWT" name="NEWT UniProt Taxonomy Database"
-                    version="Jun 2010"/>
+                <ontology id="http://data.bioontology.org/ontologies/NCBITAXON"
+                    abbreviation="NCBITAXON"
+                    name="National Center for Biotechnology Information (NCBI) Organismal Classification"
+                    version="NCBITAXON">
+                </ontology>
             </recommended-ontologies>
         </field>
         <protocol-field protocol-type="sample collection"/>
