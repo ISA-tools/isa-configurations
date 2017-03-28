@@ -145,7 +145,7 @@
             is-forced-ontology="false">
             <description><![CDATA[The name of the software used to analyze data to obtain flux distribution]]></description>
             <default-value><![CDATA[custom software]]></default-value>
-            <list-values>IACsw,custom software</list-values>
+            <list-values>,13Cflux2,C13,fiatFlux,fluxomer iterative algorithm, iMAT,INCA,isodyn,isodesign,isa2flux,IACsw,metran,Midcor,openFlux,openFlux2,openMoebius,ramid,sumoflux,custom software</list-values>
         </field>
         <field header="Normalization Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
@@ -159,7 +159,7 @@
             is-forced-ontology="false">
             <description><![CDATA[an analysis software]]></description>
             <default-value><![CDATA[]]></default-value>
-            <list-values>,Isodyn,13cflux2,C13,fiatFlux,Fluxomer Iterative Algorithm,iMAT,INCA,isodesign,metra,openFlux,openFlux2,openMoebius,custom software</list-values>
+            <list-values>,13Cflux2,C13,fiatFlux,fluxomer iterative algorithm, iMAT,INCA,isodyn,isodesign,isa2flux,IACsw,metran,Midcor,openFlux,openFlux2,openMoebius,ramid,sumoflux,custom software</list-values>
         </field>
         <field header="Data Transformation Name" data-type="String" is-file-field="false"
             is-multiple-value="true" is-required="false" is-hidden="false"

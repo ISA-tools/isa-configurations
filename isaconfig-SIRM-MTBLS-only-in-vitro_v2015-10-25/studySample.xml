@@ -89,7 +89,7 @@
             <default-value><![CDATA[monolayer]]></default-value>
             <list-values>,monolayer,double layer,sandwich,spheroids,batch,fed-batch,perfusion,continuous fermentation</list-values>
         </field>
-        <field header="Parameter Value[seeding cell density]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[cell seeding density]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Indicate seeding cell density (Mapping to Metabolomics WB:CELL:Inoculation Procedure & CELL:Cell counts).]]></description>
