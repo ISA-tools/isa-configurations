@@ -1,0 +1,401 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+	<isatab-configuration table-name="studySample">
+		<measurement term-label="[Sample]" term-accession="e.g. 12345" source-abbreviation="e.g. OBI"/>
+		<technology term-label="" term-accession="e.g. 12345" source-abbreviation="e.g. OBI"/>
+		<field header="Source Name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Sources are considered as the starting biological material used in a study.]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Organism]" data-type="Ontology term" is-file-field="true" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Provide a taxonomic information associated to the Source Biological material (for example, Species, genus, strain,....). Ideally, provide NCBI TaxID or NEWT identifier]]>
+			</description>
+			<default-value/>
+			<recommended-ontologies>
+				<ontology id="http://purl.obolibrary.org/obo/ncbitaxon" abbreviation="NCBITaxon" name="NCBI organismal classification" version="38802"/>
+			</recommended-ontologies>
+		</field>
+		<field header="Characteristics[infraspecific name]" data-type="Ontology term" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Information about the host below subspecies level; use e.g. EURISCO (http://eurisco.ecpgr.org), GENESYS (http://www.genesys-pgr.org/)]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[infraspecific rank]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[infraspecific rank of the species]]>
+			</description>
+			<default-value/>
+		</field>		
+		<field header="Characteristics[seed origin]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Origin of the seeds used in the experiment: Which genebank, institute, other seed source.]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[genotype]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[an indication of the genetic profile of the plant being studied]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[life stage]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[the life or development stage at which the biomaterial is phenotyped when the plant is not grown from seeds]]>
+			</description>
+			<default-value>adult</default-value>
+		</field>			
+		<field header="Characteristics[latitude]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[latitude expressed according to WGS84 geodetic reference]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[longitude]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[longitude expressed according to WGS84 geodetic reference]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[altitude]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[altitude expressed in meter above mean sea level]]>
+			</description>
+			<default-value/>
+		</field>			
+		<field header="Characteristics[geographic location]" data-type="Ontology term" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Geographic locations of the study, place: named field, town, region, county]]>
+			</description>
+			<default-value/>
+			<recommended-ontologies>
+				<ontology id="http://purl.obolibrary.org/obo/gaz" abbreviation="GAZ" name="Gazetteer" version=""/>
+			</recommended-ontologies>
+		</field>
+			
+		<protocol-field protocol-type ="Rooting"/>
+		<field header="Parameter Value[growth facility]" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Type of growth facility or environment where the plant grow: growth chamber GC / greenhouse GH / open top chamber OTC /]]>
+			</description>
+			<default-value><![CDATA[greenhouse]]></default-value>
+			<list-values>growth chamber,open top chamber,greenhouse</list-values>
+		</field>
+		<field header="Parameter Value[CO2 monitoring]" data-type="List"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate CO2 concentration in the atmosphere used to grow the plant]]></description>
+			<default-value><![CDATA[]]></default-value>
+			<list-values>controlled,uncontrolled</list-values>
+		</field>		
+		<field header="Parameter Value[Average CO2 concentration over light/dark period]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate CO2 concentration in the atmosphere used to grow the plant]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>
+		<field header="Parameter Value[light period average humidity in %]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate humidity in the atmosphere used to grow the plant during light periods]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>
+		<field header="Parameter Value[dark period average humidity in %]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate humidity in the atmosphere used to grow the plant during light periods]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>
+		<field header="Parameter Value[light period average temperature in C]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate the mean temperature in the chamber used to grow the plant during light periods]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>
+		<field header="Parameter Value[dark period average temperature in C]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate the mean temperature in the chamber used to grow the plant during light periods]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>		
+		<field header="Parameter Value[red/far-red light ratio]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[The ratio of R to FR light (R:FR) influences growth attributes of floriculture crops including branching and elongation of stems and leafs]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>
+		<field header="Parameter Value[lamp type]" data-type="List"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate the nature of the lamp installed in the growth cabinet]]></description>
+			<default-value><![CDATA[fluorescent tube]]></default-value>
+			<list-values>fluorescent tube,led,sodium lamp,other</list-values>
+		</field>
+		<field header="Parameter Value[container type]" data-type="List"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate the nature of the container used to grow the plant]]></description>
+			<default-value><![CDATA[plastic pot]]></default-value>
+			<list-values>plastic tray,plastic pot,glass dish</list-values>
+		</field>
+		<field header="Parameter Value[container volume (L)]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate the volume stated in liter for the container used to grow the plant]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>
+		<field header="Parameter Value[number of plant per contains]" data-type="Double"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[indicate the number of individual plants grown per container]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>		
+		<field header="Parameter Value[Rooting medium]" data-type="Ontology term" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Type of rooting medium: aeroponics / hydroponics (water-based, solid media-based) / soil type (sand, peat, clay, mixed, ...)]]>
+			</description>
+			<default-value/>
+			<recommended-ontologies>
+				<ontology id="http://purl.obolibrary.org/obo/envo" abbreviation="ENVO" name="Environment Ontology" version="releases/2014-09-16"/>
+				<ontology id="http://purl.bioontology.org/ontology/XEO" abbreviation="XEO" name="XEML Environment Ontology" version="1.6"/>
+			</recommended-ontologies>
+		</field>
+		<field header="Parameter Value[nutrient feed composition]" data-type="String"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[describe the composition NKP of the feed]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>
+		<field header="Parameter Value[nutrient feed composition]" data-type="String"
+			is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+			is-forced-ontology="false">
+			<description><![CDATA[describe the composition NKP of the feed]]></description>
+			<default-value><![CDATA[]]></default-value>
+		</field>		
+		<field header="Parameter Value[pH]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[pH of the rooting medium (for soil and hydroponics)]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[electrical conductivity]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[pH of the rooting medium (for soil and hydroponics)]]>
+			</description>
+			<default-value/>
+		</field>		
+		
+		<field header="Parameter Value[block identifier]" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[a locally (ideally globally) unique identifier for the block where the plant is being grown]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[block X coordinate]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[an integer identifying the X position of the block using a grid coordinate system]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[block Y coordinate]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[an integer identifying the Y position of the block using a grid coordinate system]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[sub-block identifier]" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[a locally (ideally globally) unique identifier for the sub-block where the plant is being grown]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[sub-block X coordinate]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[an integer identifying the X position of the sub-block using a grid coordinate system]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[sub-block Y coordinate]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[an integer identifying the Y position of the sub-block using a grid coordinate system]]>
+			</description>
+			<default-value/>
+		</field>
+
+		<field header="Parameter Value[Plot size]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Size of plot e.g. 1m2]]>
+			</description>
+			<default-value/>
+		</field>
+		<unit-field data-type="Ontology term" is-multiple-value="false" is-required="false" is-forced-ontology="false">
+			<description>Unit in which the plot size is expressed, e.g. m2"</description>
+		</unit-field>
+		<field header="Parameter Value[Seeding density]" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Density of the seeds being sown, e.g. number of seeds per 1m2.]]>
+			</description>
+			<default-value/>
+		</field>
+
+		<!-- 
+			<protocol-field protocol-type ="Aerial conditions"/>
+		<field header="Parameter Value[Air humidity]" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Air humidity (moisture)]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[Daily photon flux]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Daily integrated PPFD measured at plant or canopy level (mol m-2 day-1)]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[Length of light period]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Length of the light period (h)]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[average day temperature]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Average day temperature over the course of the experiment]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[average night temperature]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Average night temperature over the course of the experiment]]>
+			</description>
+			<default-value/>
+		</field>
+		-->
+		<protocol-field protocol-type ="Nutrition"/>
+		<field header="Parameter Value[N before fertilisation]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Total amount of extractable N before fertaliser added]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[Type of fertiliser]" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Type of fertiliser used]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[Amount of fertiliser]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Amount of fertalised added per container of 1m2]]>
+			</description>
+			<default-value/>
+		</field>
+		<protocol-field protocol-type ="Watering"/>
+		<field header="Parameter Value[Irrigation type]" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Type of irrigation: top / bottom / drip irrigation]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[Volume]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Water volume]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Parameter Value[Frequency]" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Watering frequency]]>
+			</description>
+			<default-value/>
+		</field>
+		<protocol-field protocol-type ="Sampling"/>
+		<field header="Sample Name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Plant body of interest (organ)]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Plant body of interest (organ)]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Plant product]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[material produced by the plant and which has been collected, e.g. propolis]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[sample temperature at collection]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[sample temperature when it was collected, stated in degree Celsius]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[sample collection date]" data-type="Date" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[The date at which the sample was collected, formatted according to ISO8601 specifications (YYYY-MM-DD).]]>
+			</description>
+			<default-value/>
+		</field>		
+		<field header="Characteristics[sample storage temperature]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[sample storage temperature stated in degree Celsius]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[sample storage location]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[description of sample storage location, e.g. in 2nd floor fridge in Phytobiology Department]]>
+			</description>
+			<default-value/>
+		</field>
+		
+		<field header="Characteristics[sample oxygenation status]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[the level of O2 concentration as measured in the sample at the time of collection]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[sample salinity]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[sample salt concentration expressed in osmol]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="FactorValues[treatment type]" data-type="List" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[identify the nature of the treatment used to challenge the biological system in the phenotyping experiment]]>
+			</description>
+			<default-value></default-value>
+			<list-values>Chemical treatment,pH variation treatment,salinity variation treatment,antibiotic treatment,pesticide treatment,herbicide treatment,fungicide treatment,fertilizer treatment,mineral nutrient treatment,Biological Treatment, pathogen challenge,Radiation Treatment,Mechanical Treatment,Abiotic Treatment,waterlogging treatment,</list-values>
+		</field>
+		<field header="FactorValues[treatment agent]" data-type="List" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[detail the nature of the stimuli used in the challenge: for instance, where the treatment type is a chemical treatment, report which chemical was used: e.g. Glyphosate]]>
+			</description>
+			<default-value></default-value>
+			<list-values></list-values>
+		</field>
+		<field header="FactorValues[treatment intensity]" data-type="List" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[detail the nature of the stimuli used in the challenge: for instance, where the treatment type is a chemical treatment, report which chemical was used: e.g. Glyphosate]]>
+			</description>
+			<default-value></default-value>
+			<list-values>low,medium,high,very high</list-values>
+		</field>
+		<field header="FactorValues[treatment duration]" data-type="List" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[detail the nature of the stimuli used in the challenge: for instance, where the treatment type is a chemical treatment, report which chemical was used: e.g. Glyphosate]]>
+			</description>
+			<default-value></default-value>
+			<list-values>short term,medium term,long term</list-values>
+		</field>		
+		<structured-field name="characteristics"/>
+		<structured-field name="factors"/>
+	</isatab-configuration>
+</isatab-config-file>

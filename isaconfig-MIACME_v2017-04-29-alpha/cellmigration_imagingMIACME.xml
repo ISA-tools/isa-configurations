@@ -1,0 +1,220 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="cellmigration" isatab-assay-type="generic_assay" isatab-conversion-target="generic">
+        <measurement term-label="cell migration assay" term-accession="0000366"  source-abbreviation="OBI"/>
+        <technology term-label="microscopy imaging" term-accession=""  source-abbreviation=""/>
+        <field header="Sample Name" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+            <description><![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT]</generated-value-template>
+        </field>
+        <protocol-field protocol-type="migration assay"/>
+        <field header="Parameter Value[medium]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate cell culture medium (Mapping to Metabolomics WB: Treatment:CELL:Media)]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Parameter Value[serum]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate serum type used for culture (Mapping to Metabolomics WB: Treatment:CELL:Media)]]></description>
+            <default-value></default-value>
+            <list-values>none,bovine calf serum,fetal calf serum</list-values>
+        </field>
+        <field header="Parameter Value[serum concentration]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[final concentration of the serum]]></description>
+            <default-value></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="concentration unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[medium volume]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[volume of assay specific medium added to the plate]]></description>
+            <default-value></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>volume"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000004" name="volume unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[migration modulator]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[A reagents that modulates cell migration, added to the growth medium.]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Parameter Value[modulator concentration]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[final concentration of the modulator]]></description>
+            <default-value></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="concentration unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>        
+        <field header="Parameter Value[modulator distribution]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[A reagents that modulates cell migration, added to the growth medium.]]></description>
+            <default-value>gradient</default-value>
+            <list-values>n/a,gradient,batch application</list-values>
+        </field>
+        <protocol-field protocol-type="imaging"/>
+        <field header="Parameter Value[imaging technique]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The type of the image acquisition technique.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>bright-field microscopy,super resolution bright field microscopy,phase-contrast microscopy,fluorescence microscopy,confocal microscopy,other</list-values>
+        </field>
+        <field header="Parameter Value[imaging technique temporal feature]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The type of temporal acquisition: end-point is data acquisition at one time point, dynamic at more than one timepoints.]]></description>
+            <default-value></default-value>
+            <list-values>endpoint,dynamic</list-values>
+        </field>
+        <field header="Parameter Value[acquisition duration]" data-type="Double"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the temporal extent of the data acquisition]]></description>
+            <default-value></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000032" name="hour"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field> 
+        <field header="Parameter Value[time interval]" data-type="Double"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[time interval]]></description>
+            <default-value></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000031" name="minute"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field> 
+        <field header="Parameter Value[objective type]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Objective manufacturer and objective acronym specifying optical correction, primary use of microscopy method and magnification (may also include immersion medium and/or working distance or field of view) ]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
+            </recommended-ontologies>
+        </field>
+        <field header="Parameter Value[objective magnification]" data-type="Integer" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Linear magnification of the objective]]></description>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[objective numerical aperture]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA["Value that indicates the light acceptance angle of the objective (determines the light gathering power, resolving power, and depth of field of the objective)."]]></description>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[acquisition channel count]" data-type="Integer" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA["The total number of acquisition channels for the imaging protocol."]]></description>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[reporter]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA["The type of the molecular entities used for direct imaging (e.g. dye) or indirect elements in the staining process (e.g.a histidine tag)"]]></description>
+            <default-value/>
+            <list-values>dye,labelled antibody,tag,other</list-values>
+        </field>
+        <field header="Parameter Value[voxel size]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA["The size of the voxel (usually the same in the x and in y directions)."]]></description>
+            <default-value/>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="concentration unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field> 
+        <field header="Assay Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[User-defined name for a MS assay.]]></description>
+            <default-value></default-value>
+            <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT].Extract-[EXTRACT_COUNT].LE-[LABEL_COUNT].MSASSAY-[HYB_COUNT]</generated-value-template>
+        </field>
+        <field header="Raw Data File" data-type="String" is-file-field="true"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Name (or URI) of the raw spectral data file generated by an assay.]]></description>
+            <default-value></default-value>
+        </field>
+        <protocol-field protocol-type="data transformation"/>       
+        <field header="Parameter Value[software]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[the name of the software for carrying out the image analysis]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
+            </recommended-ontologies>
+        </field>
+        <field header="Data Transformation Name" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[User-defined name for each data transformation applied]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Derived Data File" data-type="String" is-file-field="true"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Name (or URI) of the derived data file generated from spectral data by an assay.]]></description>
+            <default-value></default-value>
+        </field>
+        <structured-field name="factors"/>
+    </isatab-configuration>
+</isatab-config-file>

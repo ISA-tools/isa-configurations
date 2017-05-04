@@ -1,0 +1,68 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+	<isatab-configuration table-name="studySample">
+		<measurement term-label="[Sample]" term-accession="e.g. 12345" source-abbreviation="e.g. OBI"/>
+		<technology term-label="" term-accession="e.g. 12345" source-abbreviation="e.g. OBI"/>
+		<field header="Source Name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Sources are considered as the starting biological material used in a study.]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Organism]" data-type="Ontology term" is-file-field="true" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Provide a taxonomic information associated to the Source Biological material (for example, Species, genus, strain,....). Ideally, provide NCBI TaxID or NEWT identifier]]>
+			</description>
+			<default-value/>
+			<recommended-ontologies>
+				<ontology id="http://purl.obolibrary.org/obo/ncbitaxon" abbreviation="NCBITaxon" name="NCBI organismal classification" version="38802"/>
+			</recommended-ontologies>
+		</field>
+		<field header="Characteristics[Infraspecific name]" data-type="Ontology term" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Information about the host below subspecies level; use e.g. EURISCO (http://eurisco.ecpgr.org), GENESYS (http://www.genesys-pgr.org/)]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Seed origin]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Origin of the seeds used in the experiment: Which genebank, institute, other seed source.]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Study start]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Date of start of the study]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Study duration]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Study duration: number of days/months/years, finishing date, end condition]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Growth facility]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Type of growth facility or environment where the plant grow: growth chamber GC / greenhouse GH / open top chamber OTC / experimental garder / field / ...]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Characteristics[Geographic location]" data-type="Ontology term" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Geographic locations of the study, place: named field, town, region, county]]>
+			</description>
+			<default-value/>
+			<recommended-ontologies>
+				<ontology id="http://purl.obolibrary.org/obo/gaz" abbreviation="GAZ" name="Gazetteer" version=""/>
+			</recommended-ontologies>
+		</field>
+		<field header="Sample Name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false">
+			<description>
+				<![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]>
+			</description>
+			<default-value/>
+		</field>
+		<structured-field name="characteristics"/>
+		<structured-field name="factors"/>
+	</isatab-configuration>
+</isatab-config-file>
