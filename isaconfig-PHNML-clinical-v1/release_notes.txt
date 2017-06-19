@@ -1,0 +1,34 @@
+README:
+
+Based on isaconfig-CIMR-MTBLS-only-clinical_v2014-06-13 configuration where the following changes have been made:
+
+A. Modifications to Investigation File
+1. All fields starting with 'Investigation' have the attribute 'is_required' set to 'false'
+before {Investigation Identifier,Investigation Title,Investigation Description,Investigation PubMed ID,Investigation Publication DOI,Investigation Publication Author List,
+Investigation Person Last Name, Investigation Person First Name, Investigation Person Mid Initials} were set to true.
+
+2. Data Use information added to ISA configuration Study Section
+
+    i. Comment[Consent Availability], is_required=true and default value=NO
+    ii. Comment[MOU Availability], is_required=true and default value=NO
+    iii. Comment[Data Access Agreements Availability], is_required=true and default value=NO
+    iv. Comment[Restrictions in place], is_required=true and default value=NONE, enum=["collaboration required,ethics approval required,geographical restriction,institution-specific restriction,not-for-profit use only,project-specific restrictions,publication moratorium,publication required,return to database/resource, time limit on use,user-specific restriction"]] 
+    v. Comment[Data Linked or Unlinked Anonymized], is_required=true and default value=Unlinked Anonymized
+    vi. Comment[Data Reuse Permission Expiry Date], is_required=true
+    
+3. Grant and Funding Information:
+    
+    i.Comment[Study Grant Number], is_required=false
+    ii. Comment[Study Funding Agency], is_required=false
+
+4. Person Identifiers:
+    i. Comment[Study Person REF] , is_required=false
+    
+
+B. Modifications to Study_Sample File
+1. Introduction the Terminology for reporting QC as established by the working group
+
+    i. header="Material Type", required=true
+    <list-values>specimen,long-term reference,external long-term reference,study reference,dilution series reference,standard reference material,normal blank,reagent blank,sample preparation blank,batch terminus,negative control reference (blank),positive control reference (standard)</list-values>
+    
+    ii. addition of Characteristics[consent form], is_required="true"

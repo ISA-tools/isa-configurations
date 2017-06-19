@@ -1,0 +1,317 @@
+<isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
+    <isatab-configuration table-name="studySample">
+        <measurement term-label="[Sample]" term-accession="" source-abbreviation=""/>
+        <technology term-label="" term-accession="" source-abbreviation=""/>
+        <field header="Source Name" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
+            <description><![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Characteristics[organism]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Provide a taxonomic information associated to the Source Biological material (for example, Species, genus, strain,....). Ideally, provide NCBI TaxID]]></description>
+            <default-value/>
+        </field>
+        <field header="Characteristics[cell]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate cell type from Cell Ontology]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1006" abbreviation="CL" name="Cell type" version="50055">
+                    <branch id="CL:0000000" name="cell"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[cell provider]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the provider, supplier or vendor of the cell/cell line]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Characteristics[cellular component]" data-type="Ontology term"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate cellular component from GO]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1070" abbreviation="GO" name="Gene Ontology" version="50101">
+                    <branch id="GO:0005575" name="cellular_component"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Characteristics[life cycle stage]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate life cycle stage from uberon]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>primary cell,immortalized cell</list-values>
+        </field>
+        <field header="Characteristics[genotype]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate cell genotype]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Characteristics[passage number]" data-type="Integer" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the number of passages the cells underwent prior to harvesting]]></description>
+            <default-value></default-value>
+        </field>
+        <protocol-field protocol-type="cell growth"/>
+        <field header="Parameter Value[cell culture vessel]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the nature of hardware used to grow the cell]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>,flask,uncoated microplate,coated microplate,petri dish</list-values>
+        </field>
+        <field header="Parameter Value[cell culture configuration]" data-type="List"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate cell culture mode/layout/configuration]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>,monolayer,double layer,sandwich,spheroids</list-values>
+        </field>
+        <field header="Parameter Value[seeding density]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate seeding density]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[cell culture medium]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate cell culture medium]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[cell culture serum]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate serum type used for culture]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>,bovine calf serum,fetal calf serum</list-values>
+        </field>
+        <field header="Parameter Value[cell culture serum concentration]" data-type="Double" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[final concentration of the serum]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="concentration unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>        
+        <field header="Parameter Value[cell culture antibiotics]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[list antibiotic compounds (from CHEBI) used in the culture ]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[cell culture temperature]" data-type="Double"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate cell culture incubation temperature ]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>temperature"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000004" name="temperature unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>        
+        <field header="Parameter Value[cell culture CO2 partial pressure]" data-type="Double"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate CO2 partial pressure]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Parameter Value[cell confluence level]" data-type="Double"
+            is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the level of cell confluence in percentage]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>percentage"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000002" name="mass unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[plate identifier]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the plate identifier]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Parameter Value[plate well number]" data-type="Integer" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the number assigned to the well]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Parameter Value[plate well column coordinate]" data-type="Integer" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the column coordinate assigned to the well]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Parameter Value[plate well row coordinate]" data-type="Integer" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the row coordinate assigned to the well]]></description>
+            <default-value></default-value>
+        </field>                 
+        <protocol-field protocol-type="perturbation"/>
+        <field header="Parameter Value[perturbation order]" data-type="Integer" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the rank of the perturbation application in the overall sets of treatments applied to the cells]]></description>
+            <default-value>1</default-value>
+        </field>
+        <field header="Parameter Value[perturbation agent type]" data-type="List" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the nature perturbing agent]]></description>
+            <default-value/>
+            <list-values>siRNA,chemical compound,microRNA,gene construct</list-values>
+        </field>
+        <field header="Parameter Value[perturbation agent]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the nature perturbing agent]]></description>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[perturbation agent delivery]" data-type="List" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the method used to introduce the perturbing agent in the cell]]></description>
+            <default-value/>
+            <list-values>electroporation,viral delivery,liposome,calcium chloride</list-values>
+        </field>
+        <field header="Parameter Value[perturbation agent solvent]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the nature of the solvent used to with perturbing agent]]></description>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[perturbation agent solvent concentration]" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the concentration of the perturbing agent]]></description>
+            <default-value/>
+        </field> 
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indication concentration unit associated with concentration"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[perturbation dose]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the qualitative dose for the perturbagen]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>no dose,low dose,medium dose,high dose,no observed adverse effect dose,lethal dose</list-values>
+        </field>
+        <field header="Parameter Value[perturbation duration]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the time indicating the duration of the exposure or the time elapsed post exposure in the case of a single dose administration study]]></description>
+            <default-value></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indication time unit associated with exposure time"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <field header="Parameter Value[targeted gene identifier]" data-type="String" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the identifier for gene targeted by the perturbing agent]]></description>
+            <default-value/>
+        </field>
+        <field header="Parameter Value[gene construct tag]" data-type="List" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the identifier for gene targeted by the perturbing agent]]></description>
+            <default-value/>
+            <list-values>GFP,mCherry,c-Myc,HisTag,other</list-values>
+        </field>        
+        <field header="Parameter Value[mode of expression]" data-type="List" is-file-field="false"
+            is-multiple-value="true" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the identifier for gene targeted by the perturbing agent]]></description>
+            <default-value/>
+            <list-values>transient expression, stable cell line, transduced cell line, doxycyclin induced expression,other</list-values>
+        </field>         
+        <field header="Sample Name" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]></description>
+            <default-value></default-value>
+        </field>
+        <field header="Factor Value[perturbation agent]" data-type="Ontology term" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the chemical compound used as perturbing agent (using CHEBI)]]></description>
+            <default-value/>
+            <recommended-ontologies>
+                <ontology id="1007" abbreviation="CHEBI"
+                    name="Chemical entities of biological interest" version="50031">
+                    <branch id="CHEBI:23367" name="molecular entity"/>
+                </ontology>
+            </recommended-ontologies>
+        </field>
+        <field header="Factor Value[perturbation dose]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the qualitative dose for the perturbagen]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>no dose,low dose,medium dose,high dose,NOAEL dose,lethal dose</list-values>
+        </field>
+        <field header="Factor Value[perturbation time post exposure]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[indicate the time indicating the duration of the exposure or the time elapsed post exposure in the case of a single dose administration study]]></description>
+            <default-value></default-value>
+        </field>
+        <unit-field data-type="Ontology term" is-multiple-value="false" is-required="false"
+            is-forced-ontology="false">
+            <default-value/>
+            <description>indication time unit associated with exposure time"</description>
+            <recommended-ontologies>
+                <ontology id="1112" abbreviation="UO" name="Units of measurement" version="49941">
+                    <branch id="UO:0000003" name="time unit"/>
+                </ontology>
+            </recommended-ontologies>
+        </unit-field>
+        <structured-field name="characteristics"/>
+        <structured-field name="factors"/>
+    </isatab-configuration>
+</isatab-config-file>

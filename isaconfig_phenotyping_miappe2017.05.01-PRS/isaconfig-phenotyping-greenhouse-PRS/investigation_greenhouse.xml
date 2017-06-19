@@ -152,15 +152,27 @@
 			</description>
 			<default-value/>
 		</field>
+		<field header="Comment[Study End Date]" data-type="Date" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false" section="STUDY">
+			<description>
+				<![CDATA[The date the study was started, formatted according to ISO8601 specifications (YYYY-MM-DD).]]>
+			</description>
+			<default-value/>
+		</field>		
 		<field header="Comment[Study Duration]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false" section="STUDY">
 			<description>
 				<![CDATA[The duration of the study, formatted according to ISO8601 specifications, e.g. "P3Y6M4DT12H30M5S" represents a duration of "three years, six months, four days, twelve hours, thirty minutes, and five seconds".]]>
 			</description>
 			<default-value/>
 		</field>
+		<field header="Comment[Study Geographical Location]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false" section="STUDY">
+			<description>
+				<![CDATA["Geographical Location Name"]]>
+			</description>
+			<default-value/>
+		</field>
 		<field header="Comment[Study Geographical Location (country)]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false" section="STUDY">
 			<description>
-				<![CDATA[The geographical location where the study takes place, GAZ or geocountry names ".]]>
+				<![CDATA["The geographical location where the study takes place, GAZ or geocountry names "]]>
 			</description>
 			<default-value/>
 		</field>
@@ -191,6 +203,12 @@
 		<field header="Comment[Study Geographical Location (inclination and aspect)]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false" section="STUDY">
 			<description>
 				<![CDATA[The overall aspect of the parcel or plot of land where the experiment is carried out.".]]>
+			</description>
+			<default-value/>
+		</field>
+		<field header="Comment[Study Season]" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false" is-forced-ontology="false" section="STUDY">
+			<description>
+				<![CDATA[a value to indicate the climatic seasonal type (winter, spring), can be infered from geographical location and date".]]>
 			</description>
 			<default-value/>
 		</field>		
