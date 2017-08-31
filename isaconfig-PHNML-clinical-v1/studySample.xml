@@ -33,11 +33,18 @@
                     version="2"/>
             </recommended-ontologies>
         </field>
+        <field header="Characteristics[consent form availability]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[For Human patient based studies, information about the availability of the consent form must be reported]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>yes,no,not known</list-values>
+        </field>  
         <field header="Characteristics[consent form]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[relative path to patient sign consent form]]></description>
-            <default-value><![CDATA[]]></default-value>
+            <description><![CDATA[or Human patient based studies, relative path to patient sign consent form]]></description>
+            <default-value><![CDATA[]]></default-value>           
         </field>        
         <field header="Characteristics[gender]" data-type="Ontology term" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"

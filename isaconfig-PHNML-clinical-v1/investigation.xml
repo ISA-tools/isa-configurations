@@ -134,6 +134,7 @@
             <description><![CDATA[The role of the person in this investigation.]]></description>
             <default-value/>
         </field>
+
         <field header="Study Identifier" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
@@ -152,46 +153,91 @@
             <description><![CDATA[A brief description of the study aims.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-       
-        <field header="Comment[Consent Availability]" data-type="String" is-file-field="false"
+
+        <!-- based on https://docs.google.com/spreadsheets/d/1uKLnONMpt32VfxNpdW_RcxxCRiBHr2gU7_R8xNLhCPw/edit#gid=114327784 -->
+
+        <field header="Comment[ethics committee]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Optional Comment field to allow users to provide grant identifiers. If a grant identifier is supplied, a funding agency should be specified]]></description>
-            <default-value><![CDATA[NO]]></default-value>
-            <list-values>Yes,No</list-values>
-        </field>       
-        <field header="Comment[MOU Availability]" data-type="String" is-file-field="false"
+            <description><![CDATA[For Human patient based studies, information about ethics committee authority which has approved the study must be reported]]></description>
+            <default-value><![CDATA[not available]]></default-value>
+        </field>
+        <field header="Comment[ethics committee approval record]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Optional Comment field to allow users to provide grant identifiers. If a grant identifier is supplied, a funding agency should be specified]]></description>
-            <default-value><![CDATA[NO]]></default-value>
-        </field>       
-        <field header="Comment[Data Access Agreements Availability]" data-type="String" is-file-field="false"
+            <description><![CDATA[For Human patient based studies, information about ethics committee approval file number must be reported]]></description>
+            <default-value><![CDATA[not available]]></default-value>
+        </field>
+
+        <field header="Comment[consent availability]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Optional Comment field to allow users to provide grant identifiers. If a grant identifier is supplied, a funding agency should be specified]]></description>
-            <default-value><![CDATA[NO]]></default-value>
-        </field> 
-        <field header="Comment[Restrictions in place]" data-type="String" is-file-field="false"
+            <description><![CDATA[For Human patient based studies, information about consent availability must be reported]]></description>
+            <default-value><![CDATA[not known]]></default-value>
+            <list-values>not known,yes,no</list-values>
+        </field>
+        <field header="Comment[MOU availability]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Optional Comment field to allow users to provide grant identifiers. If a grant identifier is supplied, a funding agency should be specified]]></description>
+            <description><![CDATA[For Human patient based studies, information about memorandum of understanding (MOU) availability must be reported]]></description>
+            <default-value><![CDATA[not known]]></default-value>
+            <list-values>not known,yes,no</list-values>
+        </field>
+        <field header="Comment[data access committee name]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[For Human patient based studies, the name of the data access committee must be supplied]]></description>
+            <default-value><![CDATA[not available]]></default-value>
+        </field>
+        <field header="Comment[data access committee EGA accession number]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[For Human patient based studies, the name of the data access committee must be supplied]]></description>
+            <default-value><![CDATA[not available]]></default-value>
+        </field>
+        <field header="Comment[data access committee contact email]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[For Human patient based studies, an email address to contact the data access committee must be supplied]]></description>
+            <default-value><![CDATA[not available]]></default-value>
+        </field>         
+        <field header="Comment[data access agreement]" data-type="String"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[For Human patient based studies, a link to the document detailing the data access conditions must be reported]]></description>
+            <default-value><![CDATA[not available]]></default-value>
+        </field>
+        <field header="Comment[data access restrictions in place]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
+            is-forced-ontology="false" section="STUDY">
+            <description><![CDATA[For Human patient based studies, information about data access restrictions must be reported,, using the terminology provided (Data Use Ontology - DUO)]]></description>
             <default-value><![CDATA[None]]></default-value>
-            <list-values>None,collaboration required,ethics approval required,geographical restriction,institution-specific restriction,not-for-profit use only,project-specific restrictions,publication moratorium,publication required,return to database/resource, time limit on use,user-specific restriction</list-values>
-        </field> 
-        <field header="Comment[Data Linked or Unlinked Anonymized]" data-type="String" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
+            <list-values>None,
+                collaboration required,
+                ethics approval required,
+                geographical restriction,
+                institution-specific restriction,
+                not-for-profit use only,
+                project-specific restrictions,
+                publication moratorium,
+                publication required,
+                return to database/resource,
+                time limit on use,
+                user-specific restriction</list-values>
+        </field>
+        <field header="Comment[data anonymization status]" data-type="List"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Optional Comment field to allow users to provide grant identifiers. If a grant identifier is supplied, a funding agency should be specified]]></description>
-            <default-value><![CDATA[Unlinked Anonymized]]></default-value>
-            <list-values>linked anonymized,unlinked anonymised</list-values>
-        </field> 
-        <field header="Comment[Data Reuse Permission Expiry Date]" data-type="Date" is-file-field="false"
-            is-multiple-value="false" is-required="true" is-hidden="false"
+            <description><![CDATA[For Human patient based studies, information about data anonymization must be reported, using the terminology provided]]></description>
+            <default-value><![CDATA[not reported]]></default-value>
+            <list-values>not reported,linked anonymized,unlinked anonymised</list-values>
+        </field>
+        <field header="Comment[data reuse permission expiry date]" data-type="Date"
+            is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false" section="STUDY">
-            <description><![CDATA[Optional Comment field to allow users to provide grant identifiers. If a grant identifier is supplied, a funding agency should be specified]]></description>
+            <description><![CDATA[For Human patient based studies, provide in ISO8601 format a duration for use, as in: P4M (period 4 months) or P3Y6M4DT12H30M5S three years, six months, four days, twelve hours, thirty minutes, and five seconds]]></description>
             <default-value><![CDATA[]]></default-value>
-        </field> 
+        </field>
 
         <field header="Comment[Study Grant Number]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
@@ -331,6 +377,24 @@
             <description><![CDATA[The type of study design being employed, e.g. Observation, Intervention, Cross-Over, etc.]]></description>
             <default-value/>
         </field>
+        <field header="Comment[number of study groups]" data-type="string" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[a comment field to allow submitter to supply an identifier for Persons involved in the ISA Study. It could be an ORCID identifier for instance]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[number of subject per study group]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[a comment field to allow submitter to supply an identifier for Persons involved in the ISA Study. It could be an ORCID identifier for instance]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
+        <field header="Comment[Study Person REF]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false" section="STUDY CONTACTS">
+            <description><![CDATA[a comment field to allow submitter to supply an identifier for Persons involved in the ISA Study. It could be an ORCID identifier for instance]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>        
         <field header="Study Assay Measurement Type" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false" section="STUDY ASSAYS">
