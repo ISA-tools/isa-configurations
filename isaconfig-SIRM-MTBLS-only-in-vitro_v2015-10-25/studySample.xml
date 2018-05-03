@@ -69,7 +69,7 @@
         </field>
         <protocol-field protocol-type="cell growth"/>
         <field header="Parameter Value[isotopic tracer]" data-type="List" is-file-field="false"
-            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Report the natural stable isotope enriched compound added to the cell culture reporting the UIPAC naming convention.]]></description>
             <default-value><![CDATA[[U-13C6]-D-glucose]]></default-value>
@@ -80,7 +80,7 @@
             is-forced-ontology="false">
             <description><![CDATA[indicate the nature and size of hardware used to grow the cell (Mapping to Metabolomics WB:CELL:Growth Container).]]></description>
             <default-value><![CDATA[p6 well plate]]></default-value>
-            <list-values>,fermenter,fermentation reactor,6-well plate (9.61cm2), 12-well plate (3.7cm2),24-well plate (2.0cm2), 96-well plate (1.04cm2),25 cm2 flask,75 cm2 flask,175 cm2 flask,300 cm2 flask,500 cm2 flask</list-values>
+            <list-values>,fermenter,fermentation reactor,6-well plate (9.61cm2),12-well plate (3.7cm2),24-well plate (2.0cm2),96-well plate (1.04cm2),25 cm2 flask,75 cm2 flask,175 cm2 flask,300 cm2 flask,500 cm2 flask,other</list-values>
         </field>
         <field header="Parameter Value[cell culture configuration]" data-type="List"
             is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false"
@@ -173,8 +173,7 @@
             is-forced-ontology="false">
             <description><![CDATA[Indicate the biotic characteristics of moment of harvesting (growth phase/stage (Mapping to Metabolomics WB: Treatment:CELL:Harvesting)]]></description>
             <default-value><![CDATA[stationary growth phase]]></default-value>
-            <list-values>,exponential growth phase,stationary growth phase,steady state,cytostatic phase,cell cycle phase,stabilization time/phase before experiment,number of culture
-                passages</list-values>
+            <list-values>,exponential growth phase,stationary growth phase,steady state,cytostatic phase,cell cycle phase,stabilization time/phase before experiment,number of culture passages</list-values>
         </field>
         <field header="Parameter Value[harvesting cell density]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
@@ -188,19 +187,19 @@
             <description><![CDATA[a unit field to qualify the seeding cell density.]]></description>
             <list-values>,cells per liter,cells per cm2</list-values>
         </unit-field>        
-        <field header="Parameter Value[washing]" data-type="List" is-file-field="false"
+        <!--<field header="Parameter Value[washing]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Indicate metabolism quenching procedure (Mapping to Metabolomics WB: Treatment:PLANT:Metabolism Quenching Method).]]></description>
             <default-value><![CDATA[precooled 60% methanol HEPES buffer]]></default-value>
             <list-values>,precooled PBS buffer,precooled 60% methanol HEPES buffer,precooled 60% methanol ammonium bicarbonate buffer,none</list-values>
-        </field>        
+        </field>-->       
         <field header="Parameter Value[metabolism quenching]" data-type="List" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Indicate metabolism quenching procedure (Mapping to Metabolomics WB: Treatment:PLANT:Metabolism Quenching Method ).]]></description>
             <default-value><![CDATA[snap freezing in liquid nitrogen]]></default-value>
-            <list-values>,none,snap freezing in liquid nitrogen,other</list-values>
+            <list-values>,none,metabolism quenching by snap freezing in liquid nitrogen,metabolism quenching by 13 CD3-QDA in cold CH3CN,metabolism quenching using precooled 60 percent methanol ammonium bicarbonate buffer,metabolism quenching using precooled 60 percent methanol HEPES buffer,metabolism quenching using precooled PBS bufferother</list-values>
         </field>
         <field header="Parameter Value[storage]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"

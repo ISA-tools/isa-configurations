@@ -4,7 +4,7 @@
         <measurement term-label="mass isotopomer distribution" term-accession="" source-abbreviation=""/>
         <technology term-label="nmr spectroscopy" term-accession="" source-abbreviation=""/>
 
-  <!-- FIELDS REQUIRED BY METABOLOMICS PLUGIN -->
+  <!-- FIELDS REQUIRED BY METABOLOMICS PLUGIN
         <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
             <description>
                 The possible identifier for these small molecules. e.g. "KEGG:C000017" or "CHEBI:12345".
@@ -27,7 +27,7 @@
             <description>NMR/MS: The small molecule's description/name.  Multiple values separated with | </description>
             <default-value></default-value>
         </field>       
-  <!-- END OF REQUIREMENTS -->
+   END OF REQUIREMENTS -->
         
        <!-- OPTIONAL REPORTING OF TRACER MOLECULE INFORMATION
            <field header="tracer_molecule" data-type="String" is-file-field="false"
@@ -43,13 +43,13 @@
             <default-value></default-value>
         </field> 
        -->        
-        <field header="sample ID" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        <field header="nmr_acquisition_ref" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
             <description>
-                a reference or identifier to a sample generated over the course of the study for which the measurements apply
+                a reference or identifier to a a reference to an ISA NMR acquisition event ref (or when not possible a reference to sample generated over the course of the study for which the measurements apply)
             </description>
             <default-value></default-value>
         </field>
-        <field header="chemical shift first dimension" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+        <field header="chemical_shift_ppm" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
             <description>a numeric value to report on the chemical shift recorded by the instrument in the first dimension.
             </description>
             <default-value></default-value>
@@ -59,6 +59,7 @@
             </description>
             <default-value>ppm</default-value>
         </field> 
+        <!--
         <field header="chemical shift second dimension" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
             <description>a numeric value to report on the chemical shift recorded by the instrument in the second dimension.
             </description>
@@ -68,52 +69,112 @@
             <description>a controlled term to report the unit used to qualify the chemical shift.
             </description>
             <default-value>ppm</default-value>
-        </field> 
+        </field> -->
         <field header="multiplicity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
             <description>NMR: Type of multiplets observed of the metabolite (e.g s, d, t, q, dd, ...)</description>
             <default-value></default-value>
-        </field>  
-        <field header="labeled atomic position in molecule" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        </field>
+        <field header="connectivity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
+            <description>NMR: Molecular connectivity inferred from scalar couplings between resonances</description>
+            <default-value></default-value>
+        </field> 
+        <field header="satellite_resonances" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
+            <description>NMR: Location of satellite peaks and patterns that are used for quantification of site enrichment</description>
+            <default-value></default-value>
+        </field> 
+        <field header="saturation_factor" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
-                atomic position (here we are considering proton), use IUPAC convention. Indicated as vector where 1 represents isotopic substitution and 0 means normal atom. Example would  [1,0,0,1] for a molecule containing 4 atoms in its backbone where 2 substitutions occured.
+                number of proton (saturation factor), used to compute a correction.
             </description>
             <default-value></default-value>
-        </field>
-
-        <field header="deconvoluted peak area" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        </field>          
+        <field header="nb_proton_correction_peak_area" data-type="Integer" is-file-field="false" is-multiple-value="false" is-required="false">
+            <description>NMR: number of proton correction peak area. The information supplied in this field can be used directly for quantification
+                area corrected for number of proton (for saturation factor), also known as 'number of proton correction peak area'</description>
+            <default-value></default-value>
+        </field>       
+        <field header="deconvoluted_peak_area" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
                a numeric value indicating the area of the NMR spectrum peak following a deconvolution procedure. No unit field is needed as the values are usually in arbitrary values.
             </description>
             <default-value></default-value>
-        </field> 
-        <field header="area corrected for number of proton" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
-            <description>
-                area corrected for number of proton (for saturation factor), also known as 'number of proton correction peak area'
-            </description>
-            <default-value></default-value>
-        </field>         
-        <field header="peak deconvolution method" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        </field>
+        <field header="peak_deconvolution_method" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
                 a short description or abbreviation describing the method used to deconvolute peaks in the NMR spectrum (for instance <TODO>add method here</TODO>)
             </description>
             <default-value></default-value>
-        </field>  
-        <field header="basis of assignment" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
-            <description>a short description, possibly using a controled vocabulary such as evidence code ontology</description>
-            <default-value></default-value>
-            <listvalues>,chemical shift,mulitplicity,2D cross peak,proton-proton,homonuclear,heteronuclear resonance,not applicable,not available,other</listvalues>
-        </field> 
-        <field header="metabolite name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        </field>
+        <field header="mean_post_rltv_conc_estimate" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
-                the common name of the compound eluted at the given retention time, if known.
+                mean post relative concentration estimate as generated by BATMAN software
             </description>
             <default-value></default-value>
-        </field>       
+        </field>      
+        <field header="95pc_upr_bound" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                95% upper credible bound as generated by BATMAN software
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="95pc_lwr_bound" data-type="Float" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                95% lower credible bound as generated by BATMAN software
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="chemical_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true">
+            <description>NMR/MS: The chemical formula of the identified compound</description>
+            <default-value></default-value>
+        </field>
+        <field header="smiles" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+            <description>
+                The term SMILES refers to a line notation for encoding molecular structures and specific instances should strictly be called SMILES strings
+            </description>
+            <default-value></default-value>
+        </field> 
+        <field header="inchi" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+            <description>
+                The IUPAC International Chemical Identifier is a textual identifier for chemical substances, designed to provide a standard way to encode molecular information and to facilitate the search for such information in databases and on the web. Initially developed by IUPAC and NIST from 2000 to 2005, the format and algorithms are non-proprietary
+            </description>
+            <default-value></default-value>
+        </field>        
+        <field header="database" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
+            <description>
+                The namespace for the database as registered in MIRIAM or FAIRSHARING registry
+            </description>
+            <default-value></default-value>
+        </field>        
         <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
             <description>
                 If available, the identifier minted by CHEBI for the small molecule -  metabolite. e.g. "CHEBI:12345".
             </description>
             <default-value></default-value>
-        </field>           
+        </field> 
+        <field header="isotopomer" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+            <description>
+                identified isotopomer.
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="labeled_position" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                atomic position (here we are considering proton), use IUPAC convention. Indicated as vector where 1 represents isotopic substitution and 0 means normal atom. Example would  [1,0,0,1] for a molecule containing 4 atoms in its backbone where 2 substitutions occured.
+            </description>
+            <default-value></default-value>
+        </field>
+        <field header="assignment_type" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
+            <description>a short description, possibly using a controled vocabulary such as evidence code ontology</description>
+            <default-value></default-value>
+            <listvalues>,chemical shift,mulitplicity,2D cross peak,proton-proton,homonuclear,heteronuclear resonance,not applicable,not available,other</listvalues>
+        </field> 
+        <field header="assignment_confidence" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
+            <description>
+                indicate the confidence score for the assignment"
+            </description>
+            <default-value></default-value>
+            <list-values>"high","moderate","average","low","poor"</list-values>
+        </field> 
+          
     </isatab-configuration>
 </isatab-config-file>

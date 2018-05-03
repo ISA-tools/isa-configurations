@@ -151,7 +151,6 @@
 			</description>
 			<default-value/>
 		</field>
-
 		<field header="Parameter Value[Plot size]" data-type="Double" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
 			<description>
 				<![CDATA[Size of plot e.g. 1m2]]>
