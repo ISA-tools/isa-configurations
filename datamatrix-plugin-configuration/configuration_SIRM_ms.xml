@@ -3,7 +3,7 @@
         <measurement term-label="isotopomer distribution matrix" term-accession="" source-abbreviation=""/>
         <technology term-label="" term-accession="" source-abbreviation=""/>
         <!-- OPTIONAL REPORTING OF TRACER MOLECULE INFORMATION -->      
-        <field header="ms_assay_name" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        <field header="ms_acquisition_ref" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
             <description>
                 a reference to an ISA mass spectrometry acquisition event
             </description>
@@ -51,7 +51,7 @@
             <default-value>not available</default-value>
         </field>
 
-        <field header="raw_signal_intensity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        <field header="raw_signal_intensity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the value of the signal intensity and how it was calculated using one of the following values.
                 NOTE: a signal intensity calculation method SHOULD be reported. A Controlled Vocabulary will be provided and will include the following values:
@@ -68,7 +68,7 @@
             <description><![CDATA[Specify the unit used to report the raw signal intensity]]></description>
             <list-values>arbitrary unit,other</list-values>
         </unit-field>       
-        <field header="signal_intensity_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        <field header="signal_intensity_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the how the raw signal intensity is calculated.
             </description>
@@ -93,7 +93,7 @@
             <description><![CDATA[Specify the unit used to report the corrected signal intensity]]></description>
             <list-values>arbitrary unit,other</list-values>
         </unit-field>       
-        <field header="signal_intensity_correction_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        <field header="signal_intensity_correction_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the how the normalized signal intensity is calculated.
             </description>
@@ -118,7 +118,7 @@
             <description><![CDATA[Specify the unit used to report the corrected signal intensity]]></description>
             <list-values>arbitrary unit,other</list-values>
         </unit-field>       
-        <field header="normalization_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        <field header="normalization_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the how the normalized signal intensity is calculated.
             </description>
@@ -126,7 +126,7 @@
             <list-values>"peak height with baseline substraction","peak area with baseline substraction","sum of all peaks in each spectrum equal to 1 normalization","area normalization","total ion count normalization", "sum of isotopologue normalization"</list-values>
         </field>
 
-        <field header="chemical_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
+        <field header="chemical_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
             <description>
                 The empirical formula (of the monitored cluster) of a compound is a chemical compound formula formed by juxtaposition of the atomic symbols with appropriate (integer) subscripts to give the simplest possible formula expressing the composition. MS_1000865 is the identifier for the term in the Mass spectrometry Ontology.
                 (from: http://www.chem.uky.edu/courses/che610/JPS_Spring_2007/Formulas.pdf)
@@ -145,7 +145,7 @@
             </description>
             <default-value></default-value>
         </field>       
-        <field header="isotopic_label" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        <field header="isotope" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
                 the name of the isotope used in the tracer molecule
             </description>
@@ -159,7 +159,7 @@
             </description>
             <default-value>not available</default-value>
         </field>
-        <field header="m_to_z_correction_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
+        <field header="m_to_z_correction_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the how the normalized signal intensity is calculated.
             </description>
@@ -179,7 +179,7 @@
             </description>
             <default-value></default-value>
         </field>
-        <field header="adduct_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        <field header="adduct_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
             <description>
                 adduct ion formula specified by the given value.  http://fiehnlab.ucdavis.edu/staff/kind/Metabolomics/MS-Adduct-Calculator http://dx.doi.org/DOI:10.1016/S1044-0305(99)00089-6 http://www.ncbi.nlm.nih.gov/pubmed/22111785 ]
             </description>
@@ -197,7 +197,7 @@
             </description>
             <default-value></default-value>
         </field>  
-        <field header="assignment_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        <field header="assignment_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
             <description>
                 Specify the how chemical assignment is made
             </description>
@@ -223,7 +223,7 @@
             </description>
             <default-value></default-value>
         </field>                         
-        <field header="isotologue_abundance_relative_concentration" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        <field header="isotologue_abundance_relative_concentration" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
             <description>
                 isotologue abundance relative concentration (also known as 'percentage isotopologue enrichment)
                 The numerical value indicating the relative amount of a given isotopologue (reporting as a percentage). The synonym is "percentage isotopologue enrichment"

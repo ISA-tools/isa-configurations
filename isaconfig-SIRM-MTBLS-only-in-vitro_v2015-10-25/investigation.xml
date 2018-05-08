@@ -284,7 +284,7 @@
             <description><![CDATA[The descriptor to categorize the nature of the experimental factor ( if Factor Name is 'Dose', then Factor Type is 'quantity', if Factor Name is 'Compound', then Factor Type is 'material', if Factor Name is 'collection time point', then Factor Type is 'time'). e.g. EFO:Dose (from Ontology), or Dose if the Factor name is something related to Dose as well, etc.]]></description>
             <default-value/>
         </field>
-        <field header="Study Design Type" data-type="Ontology term" is-file-field="false"
+        <field header="Study Design Type" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false" section="STUDY DESIGN DESCRIPTORS">
             <description><![CDATA[The type of study design being employed, e.g. intervention design, cross-over design, factorial design etc.]]></description>
