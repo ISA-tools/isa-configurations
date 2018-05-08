@@ -1,24 +1,37 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
-    <isatab-configuration table-name="SIRM-mass-isotopologue-distribution_lcms"
+    <isatab-configuration table-name="SIRM-isotopologue-distribution_gcms"
         isatab-assay-type="ms_spec_assay" isatab-conversion-target="meda">
-        <measurement term-label="mass isotopologue distribution analysis" term-accession=""
+        <measurement term-label="isotopologue distribution analysis" term-accession=""
             source-abbreviation=""/>
-        <technology term-label="liquid chromatography mass spectrometry" term-accession=""
+        <technology term-label="gas chromatography mass spectrometry" term-accession=""
             source-abbreviation=""/>
         <field header="Sample Name" data-type="String" is-file-field="false"
             is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
-            <description><![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]></description>
+            <description><![CDATA[Specify the names of your samples. these should only references to samples declared in the study_sample file.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
         <protocol-field protocol-type="extraction"/>
         <field header="Extract Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[User-defined names for each portion of extracted material.]]></description>
+            <description><![CDATA[User-defined names for each portion of extracted material derived from a sample.]]></description>
             <default-value><![CDATA[]]></default-value>
-            <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT].Extract-[EXTRACT_COUNT]</generated-value-template>
         </field>
-        <protocol-field protocol-type="labeling"/>
+        <field header="Material Type" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The type of molecular class.]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>polar intracellular metabolites,apolar intracellular metabolites,extracellular metabolites,polar extracellular metabolites,apolar extracellular metabolites,amino acids,tricarbon acids,lactate,glutamate,fatty acids,glucose,ribose,lipids,eicosanoids</list-values>
+        </field>
+        <protocol-field protocol-type="derivatization"/>
+        <field header="Parameter Value[derivatization agent]" data-type="List" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[The chemical agent used for the derivatization reaction]]></description>
+            <default-value><![CDATA[]]></default-value>
+            <list-values>"diazomethane","hexamethyldisilazane","methyl iodide potassium","N-methyl-(tert-butyldimethylsilyl)trifluoroacetamide","N-methyl-N-(trimethylsilyl)","triﬂuoroacetamide","N-trimethylsilyl-imidazole","N,N-dimethylformamidedimethylacetale","N,O-Bis-(Trimethylsilyl)acetamide",""N,O-bis(trimethylsilyl)triﬂuoroacetamide","pyridine","tert-Butyldimethylsilyl","trimethylchlorosilane","trimethylphenylammoniumhydroxide","Trimethylsilyldiethylamine","trimethylsulphonium hydroxide","other"</list-values>
+        </field>
         <field header="Labeled Extract Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
@@ -61,28 +74,30 @@
             <description><![CDATA[The name of the chromatography column.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Parameter Value[elution buffer]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[carrier gas]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[The composition of the elution buffer using the following scheme: solvent A=water/formic acid (99.9/0.1 v/v); solvent B= acetonitrile/formic acid (99.9/0.1 v/v)]]></description>
+            <description><![CDATA[The composition of the carrier gas (modile phase) using the following scheme: <should be .]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Parameter Value[elution program]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[oven temperature program]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[Description of the elution program using the following scheme: ramping from 90 % solvent A, 10 % solvent B to 100% solvant B in 30 min;100% solvent B, isocratic for 10 min]]></description>
+            <description><![CDATA[The description of the gas chromatography oven temperature program using the following scheme: (40 degree C hold for 1 min.;10 degree C/min. to 300 degree C;300 degree C hold for 10 min.) ]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
+        <!-- *** not particularly relevant as in gc, flow rate has little influence ***
         <field header="Parameter Value[flow rate]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[Report the flow rate of the elution buffer through column in amount per minute.]]></description>
+            <description><![CDATA[Report the flow rate of the carrier gas through column in amount per minute]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
+        -->
         <field header="Parameter Value[mass spectrometry instrument]" data-type="Ontology term" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[The name of the mass spectrometry instrument]]></description>
+            <description><![CDATA[The name of the mass spectrometry instrument.]]></description>
             <default-value/>
             <recommended-ontologies>
                 <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
@@ -91,16 +106,13 @@
         <field header="Parameter Value[ion source]" data-type="Ontology term" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[The ion source used by the mass spectrometer, use PSI-MS cv.]]></description>
+            <description><![CDATA[the ion source used by the mass spectrometer, use PSI-MS cv]]></description>
             <default-value/>
-            <recommended-ontologies>
-                <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
-            </recommended-ontologies>
         </field>
         <field header="Parameter Value[detector]" data-type="Ontology term" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[The detector used by the mass spectrometer, use PSI-MS cv.]]></description>
+            <description><![CDATA[the detector used by the mass spectrometer, use PSI-MS cv]]></description>
             <default-value/>
             <recommended-ontologies>
                 <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
@@ -109,7 +121,7 @@
         <field header="Parameter Value[analyzer]" data-type="Ontology term" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
-            <description><![CDATA[The analyzer(s) used by the mass spectrometer, use PSI-MS cv.]]></description>
+            <description><![CDATA[the analyzer(s) used by the mass spectrometer, use PSI-MS cv]]></description>
             <default-value/>
             <recommended-ontologies>
                 <ontology id="1105" abbreviation="MS" name="Mass spectrometry" version="49685"/>
@@ -120,7 +132,6 @@
             is-forced-ontology="false">
             <description><![CDATA[User-defined name for a MS assay.]]></description>
             <default-value><![CDATA[]]></default-value>
-            <generated-value-template>[INSTITUTION].Group-[GROUP_NO].Subject-[SUBJECT_NO].[SAMPLE_EXTRACT].Extract-[EXTRACT_COUNT].LE-[LABEL_COUNT].MSASSAY-[HYB_COUNT]</generated-value-template>
         </field>
         <field header="Raw Spectral Data File" data-type="String" is-file-field="true"
             is-multiple-value="false" is-required="false" is-hidden="false"
@@ -134,7 +145,7 @@
             is-forced-ontology="false">
             <description><![CDATA[The name of the software used to analyze data to obtain flux distribution]]></description>
             <default-value><![CDATA[custom software]]></default-value>
-            <list-values>none,13Cflux2,C13,fiatFlux,fluxomer iterative algorithm,iMAT,INCA,isodyn,isodesign,isa2flux,IACsw,metran,Midcor,openFlux,openFlux2,openMoebius,ramid,sumoflux,custom software</list-values>
+            <list-values>,13Cflux2,C13,fiatFlux,fluxomer iterative algorithm,iMAT,INCA,isodyn,isodesign,isa2flux,IACsw,metran,Midcor,openFlux,openFlux2,openMoebius,ramid,sumoflux,custom software</list-values>
         </field>
         <field header="Normalization Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
