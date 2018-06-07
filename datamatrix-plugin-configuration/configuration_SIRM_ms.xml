@@ -1,7 +1,7 @@
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
     <isatab-configuration table-name="stable_isotope_resolved_metabomics_ms_mid_tab">
-        <measurement term-label="isotopomer distribution matrix" term-accession="" source-abbreviation=""/>
-        <technology term-label="" term-accession="" source-abbreviation=""/>
+        <measurement term-label="isotopologue distribution analysis" term-accession="" source-abbreviation=""/>
+        <technology term-label="mass spectrometry" term-accession="" source-abbreviation=""/>
         <!-- OPTIONAL REPORTING OF TRACER MOLECULE INFORMATION -->      
         <field header="ms_acquisition_ref" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
             <description>
@@ -50,7 +50,6 @@
             </description>
             <default-value>not available</default-value>
         </field>
-
         <field header="raw_signal_intensity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the value of the signal intensity and how it was calculated using one of the following values.
@@ -75,7 +74,6 @@
             <default-value>not available</default-value>
             <list-values>raw peak height","raw peak area"</list-values>
         </field>
-
         <field header="corr_signal_intensity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the value of the signal intensity and how it was calculated using one of the following values.
@@ -100,7 +98,6 @@
             <default-value>not available</default-value>
             <list-values>"ion suppression bias correction","isotopic natural abundance correction"</list-values>
         </field>
-
         <field header="norm_signal_intensity" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 Specify the value of the signal intensity and how it was calculated using one of the following values.
@@ -125,7 +122,6 @@
             <default-value>not available</default-value>
             <list-values>"peak height with baseline substraction","peak area with baseline substraction","sum of all peaks in each spectrum equal to 1 normalization","area normalization","total ion count normalization", "sum of isotopologue normalization"</list-values>
         </field>
-
         <field header="chemical_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true" is-hidden="false">
             <description>
                 The empirical formula (of the monitored cluster) of a compound is a chemical compound formula formed by juxtaposition of the atomic symbols with appropriate (integer) subscripts to give the simplest possible formula expressing the composition. MS_1000865 is the identifier for the term in the Mass spectrometry Ontology.
@@ -138,7 +134,6 @@
             </description>
             <default-value></default-value>
         </field>
-
         <field header="isotopologue" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
                 To indicate the percentage of fragment molecules that contain 0 13C (m+0), 1 13C (m+1), 2 13C (m+2), ... (y-x+1) 13C (m+y-x+1)). Values can be expressed as a fraction of unity or as percentage. This is usually the data that is most frequently reported in publications. Ideally these values should have been corrected for natural enrichment so that they only take into account the enrichment that comes from the tracer. NOTE: we use 'isotopologue' as synonymous to 'mass isotopomer'
@@ -152,7 +147,6 @@
             <default-value>13C</default-value>
             <listvalues>"2H","13C","15N","18O","19F","33Cl","37S"</listvalues>
         </field>       
-
         <field header="corrected_mass_to_charge" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false" is-hidden="false">
             <description>
                 the mass to charge (m over z) ratio being monitored and to which the signal intensity corresponds.
@@ -166,14 +160,13 @@
             <default-value>not available</default-value>
             <list-values>"adduct correction","isotopic natural abundance correction","adduct and isotopic natural abundance correction"</list-values>
         </field>
-
         <field header="molecular_fragment" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
                A fragment name, conventionally named using Cx-Cy, where x and y correspond to the carbon number in the metabolite that is being analyzed. x can be 1 or higher and y is lower or equal to n, where n is the total number of carbons of the molecule backbone. For example: glucose has 6 carbons so the complete molecular fragment would be C1-C6. If the indicated fragment is C3-C6 it means that results will refer to the 4 carbons fragment between carbon 3 and carbon 6 of glucose molecule.               
             </description>
             <default-value></default-value>
         </field>
-        <field header="chemical_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+        <field header="molecular_fragment_chemical_formula" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
             <description>
                 The empirical formula The IUPAC sensu chemical formula about the molecular fragment associated with the m/z position in the mass spectrometry spectrum. The empirical formula of a compound is a chemical compound formula formed by juxtaposition of the atomic symbols with appropriate (integer) subscripts to give the simplest possible formula expressing the composition. MS_1000865 is the identifier for the term in the Mass spectrometry Ontology.
             </description>
@@ -197,6 +190,12 @@
             </description>
             <default-value></default-value>
         </field>  
+        <!--         <field header="labeled_position" data-type="String" is-file-field="false" is-multiple-value="false" is-required="true"  is-hidden="false">
+            <description>
+                atomic position (here we are considering proton), use IUPAC convention. Indicated as vector where 1 represents isotopic substitution and 0 means normal atom. Example would  [1,0,0,1] for a molecule containing 4 atoms in its backbone where 2 substitutions occured.
+            </description>
+            <default-value></default-value>
+        </field> -->        
         <field header="assignment_type" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
             <description>
                 Specify the how chemical assignment is made

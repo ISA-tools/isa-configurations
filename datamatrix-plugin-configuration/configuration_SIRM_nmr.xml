@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
     <isatab-configuration table-name="stable_isotope_resolved_metabomics_nmr_mid_tab">
-        <measurement term-label="mass isotopomer distribution" term-accession="" source-abbreviation=""/>
-        <technology term-label="nmr spectroscopy" term-accession="" source-abbreviation=""/>
+        <measurement term-label="isotopomer distribution analysis" term-accession="" source-abbreviation=""/>
+        <technology term-label="NMR spectroscopy" term-accession="" source-abbreviation=""/>
 
   <!-- FIELDS REQUIRED BY METABOLOMICS PLUGIN
         <field header="database_identifier" data-type="String" is-file-field="false" is-multiple-value="true" is-required="true" is-hidden="false">
@@ -166,7 +166,7 @@
         <field header="assignment_type" data-type="String" is-file-field="false" is-multiple-value="false" is-required="false">
             <description>a short description, possibly using a controled vocabulary such as evidence code ontology</description>
             <default-value></default-value>
-            <listvalues>,chemical shift,mulitplicity,2D cross peak,proton-proton,homonuclear,heteronuclear resonance,not applicable,not available,other</listvalues>
+            <listvalues>,chemical shift,multiplicity,2D cross peak,proton-proton,homonuclear,heteronuclear resonance,not applicable,not available,other</listvalues>
         </field> 
         <field header="assignment_confidence" data-type="List" is-file-field="false" is-multiple-value="false" is-required="false"  is-hidden="false">
             <description>

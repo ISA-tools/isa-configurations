@@ -173,6 +173,12 @@
             <description><![CDATA[Name (or URI) of the derived data file generated from spectral data by an assay. Use this field to reporte Mass Isotopologue Distribution File]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
+        <field header="Metabolite Assignment File" data-type="String" is-file-field="true"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[Name (or URI) of the metabolite assignment file gathered for this assay.]]></description>
+            <default-value><![CDATA[]]></default-value>
+        </field>
         <structured-field name="factors"/>
     </isatab-configuration>
 </isatab-config-file>
