@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <isatab-config-file xmlns="http://www.ebi.ac.uk/bii/isatab_configuration#">
-    <isatab-configuration table-name="targetedmetaboliteprofiling_hplc"
+    <isatab-configuration table-name="metaboliteprofiling_lcdad"
         isatab-assay-type="generic_assay" isatab-conversion-target="generic">
-        <measurement term-label="targeted metabolite profiling" term-accession="obo:OBI_0000366"
+        <measurement term-label="metabolite profiling" term-accession="obo:OBI_0000366"
             source-abbreviation="OBI"/>
-        <technology term-label="high performance liquid chromatography" term-accession=""
-            source-abbreviation=""/>
+        <technology term-label="liquid chromatography diode-array-detection" term-accession="obo:CHMO_0001738"
+            source-abbreviation="CHMO"/>
         <field header="Sample Name" data-type="String" is-file-field="false"
             is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
             <description><![CDATA[Samples represent major outputs resulting from a protocol application other than the special case outputs of Extract or a Labeled Extract.]]></description>
@@ -52,8 +53,8 @@
         <field header="Parameter Value[detector]" data-type="List" is-file-field="false"
             is-multiple-value="true" is-required="true" is-hidden="false" is-forced-ontology="false">
             <description><![CDATA[the detector used by hplc instrument, use PSI-MS cv or OBI]]></description>
-            <default-value><![CDATA[]]></default-value>
-            <list-values>diode array detector,fluorescence detector</list-values>
+            <default-value><![CDATA["diode array detector"]]></default-value>
+            <list-values>diode array detector</list-values>
         </field>
         <field header="Assay Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="true" is-hidden="false"
@@ -69,12 +70,18 @@
             <default-value><![CDATA[]]></default-value>
         </field>
         <protocol-field protocol-type="data transformation"/>
-        <field header="Normalization Name" data-type="String" is-file-field="false"
+        <field header="Parameter Value[software]" data-type="String" is-file-field="false"
+            is-multiple-value="false" is-required="false" is-hidden="false"
+            is-forced-ontology="false">
+            <description><![CDATA[please supply a pointer to a table detailing the modality of the solvent gradient during the elution process]]></description>
+            <default-value><![CDATA[ALSace R package]]></default-value>
+        </field>
+        <!--<field header="Normalization Name" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[User-defined name for each normalization applied]]></description>
             <default-value><![CDATA[]]></default-value>
-        </field>
+        </field>-->
         <field header="Data Transformation Name" data-type="String" is-file-field="false"
             is-multiple-value="true" is-required="false" is-hidden="false"
             is-forced-ontology="false">
