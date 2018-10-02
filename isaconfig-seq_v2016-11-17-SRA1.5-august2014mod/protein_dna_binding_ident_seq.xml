@@ -103,7 +103,7 @@
             <default-value><![CDATA[]]></default-value>
             <list-values>454 GS,454 GS 20,454 GS FLX,454 GS FLX+,454 GS FLX Titanium,454 GS Junior,AB SOLiD System,AB SOLiD System 2.0,AB SOLiD System 3.0,AB SOLiD 3 Plus System,AB SOLiD 4 System,AB SOLiD 4hq System,AB SOLiD PI System,AB SOLiD 5500,AB SOLiD 5500xl,AB 5500 Genetic Analyzer,AB 5500xl Genetic analyzer,AB 5500xl-W Genetic Analysis System,Illumina Genome Analyzer,Illumina Genome Analyzer II,Illumina Genome Analyzer IIx,Illumina HiSeq 1000,Illumina HiSeq 1500,Illumina HiSeq 2000,Illumina HiSeq 2500,Illumina HiSeq 3000,Illumina HiSeq 4000,Illumina HiScanSQ,Illumina MiSeq,HiSeq X Five,HiSeq X Ten,NextSeq 500,NextSeq 550,Ion Torrent PGM,Ion Torrent Proton,MinION,GridION,PacBio RS,PacBio RS II,Sequel,BGISEQ-500,Helicos HeliScope,Complete Genomics,Sanger sequencing instrument,AB 3730xL Genetic Analyzer,AB 3730 Genetic Analyzer,AB 3500xL Genetic Analyzer,AB 3500 Genetic Analyzer,AB 3130xL Genetic Analyzer,AB 3130 Genetic Analyzer,AB 310 Genetic Analyzer,unspecified</list-values>
         </field>
-        <field header="Parameter Value[quality score]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[quality scorer]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Name and version of the quality scoring software.]]></description>

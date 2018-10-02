@@ -81,7 +81,7 @@
             <description><![CDATA[Name and version of the base or color calling software.]]></description>
             <default-value><![CDATA[]]></default-value>
         </field>
-        <field header="Parameter Value[quality score]" data-type="String" is-file-field="false"
+        <field header="Parameter Value[quality scorer]" data-type="String" is-file-field="false"
             is-multiple-value="false" is-required="false" is-hidden="false"
             is-forced-ontology="false">
             <description><![CDATA[Name and version of the quality scoring software.]]></description>
